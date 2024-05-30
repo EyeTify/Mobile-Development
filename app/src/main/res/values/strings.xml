@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Eyetify</string>
+    <string name="home">Home</string>
+    <string name="history">History</string>
+    <string name="scan">Scan</string>
+    <string name="article">Article</string>
+    <string name="profile">Profile</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="photo">Photo</string>
+    <string name="upload_file">Upload File</string>
+    <string name="desc_upload_file">Browse and Select File That You \n Choose to Upload</string>
+    <string name="icon_upload">icon upload</string>
+    <string name="icon_analyze">icon analyze</string>
+    <string name="image">image</string>
+
+    <string name="sample_name">Raihan Fathurrahman</string>
+    <string name="sample_email">raihan_fathurrahman@gmail.com</string>
+    <string name="setting">Pengaturan</string>
+    <string name="my_profile">Profil Saya</string>
+    <string name="account">Akun</string>
+    <string name="title_page_result">Result</string>
+    <string name="prediction">Prediction</string>
+    <string name="result">Result</string>
+    <string name="sample_desc">"Adalah panca indera manusia yang sangat penting/esensial. Dapat dibayangkan jika kita mengalami kerusakan mata atau kebutaan, kita "</string>
+    <string name="sample_title_news">Cara Mudah Menjaga Mata sehari hari</string>
+    <string name="welcome">Welcome Activity</string>
+    <string name="your_health_wellness_on_demand"><![CDATA[Your Health & Wellness On-\nDemand]]></string>
+    <string name="create_account">Create Account</string>
+    <string name="have_account">Already Have an Account</string>
+    <string name="motto">See the world in all its clarity</string>
+
+</resources>
