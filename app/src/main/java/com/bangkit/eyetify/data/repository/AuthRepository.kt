@@ -17,8 +17,6 @@ class AuthRepository(
     private val authService: AuthService,
     private val userPreferences: UserPreference
 ) {
-    private val _registerResponse = MutableLiveData<RegisterResponse>()
-    val registerResponse: LiveData<RegisterResponse> = _registerResponse
     private val _loginResponse = MutableLiveData<LoginResponse>()
     val loginResponse: LiveData<LoginResponse> = _loginResponse
 

@@ -11,7 +11,6 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.bangkit.eyetify.MainActivity
-import com.bangkit.eyetify.R
 import com.bangkit.eyetify.data.model.UserModel
 import com.bangkit.eyetify.data.preference.Result
 import com.bangkit.eyetify.databinding.ActivityLoginBinding
@@ -45,8 +44,8 @@ class LoginActivity : AppCompatActivity() {
     private fun login() {
         val email = binding.emailEditText.text.toString()
         val password = binding.passwordEditText.text.toString()
-        viewModel.login(email, password)
 
+        viewModel.login(email, password)
         viewModel.loginResult.observe(this){result ->
             when(result){
                 is Result.DataLoading -> {

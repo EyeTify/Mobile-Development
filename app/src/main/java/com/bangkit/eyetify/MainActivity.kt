@@ -1,7 +1,10 @@
 package com.bangkit.eyetify
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
+import android.view.WindowInsets
+import android.view.WindowManager
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -18,7 +21,9 @@ import com.bangkit.eyetify.ui.viewmodel.model.MainViewModel
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
+    private val binding: ActivityMainBinding by lazy {
+        ActivityMainBinding.inflate(layoutInflater)
+    }
 
     private val viewModel by viewModels<MainViewModel> {
         AuthViewModelFactory.getInstance(this)
@@ -26,8 +31,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         viewModel.getSession().observe(this) { user ->
@@ -36,7 +39,7 @@ class MainActivity : AppCompatActivity() {
                 finish()
             }
         }
-
+        setupView()
         switchFragment(HomeFragment())
 
         binding.navigateMenu.setOnItemSelectedListener {
@@ -61,5 +64,21 @@ class MainActivity : AppCompatActivity() {
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.container_fragment, fragment)
         fragmentTransaction.commit()
+    }
+
+    private fun setupView() {
+        @Suppress("DEPRECATION")
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            window.insetsController?.hide(WindowInsets.Type.statusBars())
+        } else {
+            window.setFlags(
+                WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN
+            )
+        }
+
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.container_fragment, HomeFragment())
+            .commit()
     }
 }

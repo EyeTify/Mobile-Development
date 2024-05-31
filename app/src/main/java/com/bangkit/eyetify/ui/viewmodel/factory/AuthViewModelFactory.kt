@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.bangkit.eyetify.data.injection.AuthInjection
 import com.bangkit.eyetify.data.repository.AuthRepository
+import com.bangkit.eyetify.ui.viewmodel.model.LoginViewModel
 import com.bangkit.eyetify.ui.viewmodel.model.MainViewModel
 
 class AuthViewModelFactory(private val repository: AuthRepository) : ViewModelProvider.NewInstanceFactory() {
@@ -13,6 +14,9 @@ class AuthViewModelFactory(private val repository: AuthRepository) : ViewModelPr
         return when {
             modelClass.isAssignableFrom(MainViewModel::class.java) -> {
                 MainViewModel(repository) as T
+            }
+            modelClass.isAssignableFrom(LoginViewModel::class.java) -> {
+                LoginViewModel(repository) as T
             }
 
             else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
