@@ -16,6 +16,7 @@ class EnsiklopediaAdapter(private val listEnsiklopedia: ArrayList<EnsiklopediaMo
         return EnsiklopediaViewHolder(binding)
     }
 
+
     override fun getItemCount(): Int = listEnsiklopedia.size
 
     override fun onBindViewHolder(holder: EnsiklopediaViewHolder, position: Int) {

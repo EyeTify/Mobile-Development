@@ -6,15 +6,25 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
+import androidx.fragment.app.viewModels
 import com.bangkit.eyetify.R
 import com.bangkit.eyetify.databinding.FragmentScanBinding
 import com.bangkit.eyetify.ui.activity.ResultActivity
+import com.bangkit.eyetify.ui.viewmodel.factory.AuthViewModelFactory
+import com.bangkit.eyetify.ui.viewmodel.model.MainViewModel
+import com.bangkit.eyetify.ui.viewmodel.model.RegisterViewModel
 
 class ScanFragment : Fragment() {
 
     private var _binding: FragmentScanBinding? = null
     private val binding get()= _binding!!
+
+    private val viewModel by viewModels<MainViewModel> {
+        AuthViewModelFactory.getInstance(requireContext())
+    }
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,6 +46,10 @@ class ScanFragment : Fragment() {
         binding.addImageButton.setOnClickListener{
             val intent = Intent(this.context, ResultActivity::class.java)
             startActivity(intent)
+        }
+
+        binding.analyzeImageButton.setOnClickListener{
+            viewModel.logout()
         }
     }
 

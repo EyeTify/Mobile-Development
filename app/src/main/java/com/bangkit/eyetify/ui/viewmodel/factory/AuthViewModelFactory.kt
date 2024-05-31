@@ -7,6 +7,7 @@ import com.bangkit.eyetify.data.injection.AuthInjection
 import com.bangkit.eyetify.data.repository.AuthRepository
 import com.bangkit.eyetify.ui.viewmodel.model.LoginViewModel
 import com.bangkit.eyetify.ui.viewmodel.model.MainViewModel
+import com.bangkit.eyetify.ui.viewmodel.model.RegisterViewModel
 
 class AuthViewModelFactory(private val repository: AuthRepository) : ViewModelProvider.NewInstanceFactory() {
     @Suppress("UNCHECKED_CAST")
@@ -18,7 +19,9 @@ class AuthViewModelFactory(private val repository: AuthRepository) : ViewModelPr
             modelClass.isAssignableFrom(LoginViewModel::class.java) -> {
                 LoginViewModel(repository) as T
             }
-
+            modelClass.isAssignableFrom(RegisterViewModel::class.java) -> {
+                RegisterViewModel(repository) as T
+            }
             else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
         }
     }

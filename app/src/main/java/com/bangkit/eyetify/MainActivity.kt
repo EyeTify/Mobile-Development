@@ -11,11 +11,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.bangkit.eyetify.databinding.ActivityMainBinding
 import com.bangkit.eyetify.ui.activity.WelcomeActivity
-import com.bangkit.eyetify.ui.fragment.ArticleFragment
 import com.bangkit.eyetify.ui.fragment.HistoryFragment
 import com.bangkit.eyetify.ui.fragment.HomeFragment
 import com.bangkit.eyetify.ui.fragment.ProfileFragment
 import com.bangkit.eyetify.ui.fragment.ScanFragment
+import com.bangkit.eyetify.ui.fragment.article.ArticleFragment
 import com.bangkit.eyetify.ui.viewmodel.factory.AuthViewModelFactory
 import com.bangkit.eyetify.ui.viewmodel.model.MainViewModel
 
