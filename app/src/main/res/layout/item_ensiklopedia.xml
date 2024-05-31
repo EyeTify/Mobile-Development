@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="70dp"
+    android:layout_height="100dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="6dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img_eyedesease"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_titledesease"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Penyakit"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/img_eyedesease"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_desciptiondesease"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="invisible"
+        tools:text="Ini adalah TextView yang tidak terlihat"
+        app:layout_constraintTop_toTopOf="@id/img_eyedesease"
+        app:layout_constraintStart_toStartOf="@id/img_eyedesease"
+        app:layout_constraintEnd_toEndOf="@id/img_eyedesease"
+        app:layout_constraintBottom_toBottomOf="@id/img_eyedesease"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

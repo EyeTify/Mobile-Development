@@ -72,4 +72,5 @@ dependencies {
     ksp(libs.androidx.room.compiler)
 
     implementation (libs.glide)
+    implementation ("de.hdodenhof:circleimageview:3.1.0")
 }
