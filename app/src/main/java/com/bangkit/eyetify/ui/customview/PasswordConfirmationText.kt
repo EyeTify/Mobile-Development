@@ -14,6 +14,7 @@ class PasswordConfirmationText @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = androidx.appcompat.R.attr.editTextStyle
 ) : AppCompatEditText(context, attrs, defStyleAttr) {
 
+    private var passwordToMatch: String? = null
     init {
         hint = "Confirmation your password"
         textAlignment = View.TEXT_ALIGNMENT_VIEW_START
@@ -32,6 +33,10 @@ class PasswordConfirmationText @JvmOverloads constructor(
                 // Do nothing
             }
         })
+    }
+
+    fun setPasswordToMatch(password: String) {
+        this.passwordToMatch = password
     }
 
     private fun validatePassword(s: CharSequence) {

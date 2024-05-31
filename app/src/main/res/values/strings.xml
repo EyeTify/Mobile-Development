@@ -45,6 +45,7 @@
     <string name="sample_title_news">Cara Mudah Menjaga Mata\nsehari hari</string>
     <string name="scan">Scan</string>
     <string name="ensiklopedia">Ensiklopedia</string>
+    <string name="error_password_mismatch">Password tidak cocok</string>
 
     <string-array name="data_name">
         <item>Cataract</item>

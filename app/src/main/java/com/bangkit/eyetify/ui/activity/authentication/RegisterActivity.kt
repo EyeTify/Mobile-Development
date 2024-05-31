@@ -3,6 +3,8 @@ package com.bangkit.eyetify.ui.activity.authentication
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
@@ -13,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.bangkit.eyetify.R
+import com.bangkit.eyetify.data.preference.Result
 import com.bangkit.eyetify.databinding.ActivityRegisterBinding
 import com.bangkit.eyetify.ui.viewmodel.factory.AuthViewModelFactory
 import com.bangkit.eyetify.ui.viewmodel.model.LoginViewModel
@@ -50,49 +53,62 @@ class RegisterActivity : AppCompatActivity() {
         supportActionBar?.hide()
     }
     private fun setupAction() {
-        val nameVal = binding.nameEditText.text.toString()
-        val emailVal = binding.emailEditText.text.toString()
-        val passVal = binding.passwordEditText.text.toString()
-        val confirmPassVal = binding.passwordConfirmationEditText.text.toString()
-
-        binding.signupButton.setOnClickListener{
-            if (nameVal.isNotEmpty() && emailVal.isNotEmpty() &&
-                passVal.isNotEmpty() && confirmPassVal.isNotEmpty()){
-
-                if (passVal == confirmPassVal){
-                    processRegister()
-                    showLoading(true)
-                }else{
-                    binding.passwordEditText.error = "Pastikan Passowrd Yang Dimasukkan Sama Ya....."
-                }
-
-            }
+        binding.signupButton.setOnClickListener {
+            processRegister()
         }
+
+        binding.passwordEditText.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                binding.passwordConfirmationEditText.setPasswordToMatch(s.toString())
+            }
+            override fun afterTextChanged(s: Editable) {}
+        })
 
     }
 
     private fun processRegister() {
-        apply {
-            viewModel.register(
-                binding.nameEditText.text.toString(),
-                binding.emailEditText.toString(),
-                binding.passwordEditText.text.toString()
-            )
-            showLoading(false)
+        val name = binding.nameEditText.text.toString()
+        val email = binding.emailEditText.text.toString()
+        val password = binding.passwordEditText.text.toString()
+        val confirmPassword = binding.passwordConfirmationEditText.text.toString()
 
-            AlertDialog.Builder(this).apply {
-                setTitle("Yeah!")
-                setMessage("Akun ${binding.nameEditText.text.toString()} sudah jadi nih. Yuk Login Dulu.")
-                setPositiveButton("Lanjut") { _, _ ->
-                    finish()
-                    intent = Intent(this@RegisterActivity, LoginActivity::class.java)
-                    startActivity(intent)
+        if (password != confirmPassword) {
+            binding.passwordConfirmationEditTextLayout.error = getString(R.string.error_password_mismatch)
+            return
+        } else {
+            binding.passwordConfirmationEditTextLayout.error = null
+        }
+
+        viewModel.register(name, email, password)
+        viewModel.registerResult.observe(this) { result ->
+            when (result) {
+                is Result.DataLoading -> {
+                    showLoading(true)
                 }
-                create()
-                show()
+                is Result.DataSuccess -> {
+                    showLoading(false)
+                    AlertDialog.Builder(this).apply {
+                        setTitle("Berhasil")
+                        setMessage("Akun ${binding.nameEditText.text.toString()} sudah jadi nih. Yuk Login Dulu.")
+                        setPositiveButton("Lanjut") { _, _ ->
+                            finish()
+                        }
+                        create()
+                        show()
+                    }
+                }
+                is Result.DataError -> {
+                    showLoading(false)
+                    AlertDialog.Builder(this).apply {
+                        setTitle("Gagal")
+                        setMessage("Registrasi gagal: ${result.error}")
+                        setNeutralButton("Coba Lagi", null)
+                        create()
+                        show()
+                    }
+                }
             }
-
-
         }
     }
 
