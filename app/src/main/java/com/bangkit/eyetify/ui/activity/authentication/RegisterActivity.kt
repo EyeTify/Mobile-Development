@@ -1,4 +1,4 @@
-package com.bangkit.eyetify.ui.activity.ui
+package com.bangkit.eyetify.ui.activity.authentication
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge

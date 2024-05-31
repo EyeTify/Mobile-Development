@@ -8,8 +8,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.bangkit.eyetify.R
 import com.bangkit.eyetify.databinding.ActivityWelcomeBinding
-import com.bangkit.eyetify.ui.activity.ui.LoginActivity
-import com.bangkit.eyetify.ui.activity.ui.RegisterActivity
+import com.bangkit.eyetify.ui.activity.authentication.LoginActivity
+import com.bangkit.eyetify.ui.activity.authentication.RegisterActivity
 
 class WelcomeActivity : AppCompatActivity() {
 
