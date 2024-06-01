@@ -20,7 +20,7 @@ class EnsiklopediaAdapter(private val listEnsiklopedia: ArrayList<EnsiklopediaMo
     override fun getItemCount(): Int = listEnsiklopedia.size
 
     override fun onBindViewHolder(holder: EnsiklopediaViewHolder, position: Int) {
-        val (name, photo, description) = listEnsiklopedia[position]
+        val (name, photo, description, indication, cause, service) = listEnsiklopedia[position]
         holder.binding.tvTitledesease.text = name
         holder.binding.imgEyedesease.setImageResource(photo)
         holder.binding.tvDesciptiondesease.text = description

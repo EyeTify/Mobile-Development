@@ -42,6 +42,12 @@ class MainActivity : AppCompatActivity() {
         setupView()
         switchFragment(HomeFragment())
 
+        val openFragmentArticle = intent.getBooleanExtra("OPEN_ARTIKEL_FRAGMENT", false)
+
+        if (openFragmentArticle) {
+            openFragmentArticle()
+        }
+
         binding.navigateMenu.setOnItemSelectedListener {
             when(it.itemId){
                 R.id.action_home -> switchFragment(HomeFragment())
@@ -80,5 +86,14 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction()
             .replace(R.id.container_fragment, HomeFragment())
             .commit()
+    }
+
+    private fun openFragmentArticle() {
+        switchFragment(ArticleFragment())
+        setSelectedItem(R.id.action_article)
+    }
+
+    private fun setSelectedItem(itemId: Int) {
+        binding.navigateMenu.selectedItemId = itemId
     }
 }

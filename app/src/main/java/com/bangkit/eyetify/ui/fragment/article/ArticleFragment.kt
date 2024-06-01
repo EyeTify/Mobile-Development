@@ -1,5 +1,6 @@
 package com.bangkit.eyetify.ui.fragment.article
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -25,7 +26,7 @@ class ArticleFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentArticleBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -39,13 +40,21 @@ class ArticleFragment : Fragment() {
         showRecyclerList()
     }
 
+    @SuppressLint("Recycle")
     private fun getListEnsiklopedia(): ArrayList<EnsiklopediaModel> {
         val dataName = resources.getStringArray(R.array.data_name)
         val dataPhoto = resources.obtainTypedArray(R.array.data_photo)
         val dataDescription = resources.getStringArray(R.array.data_description)
+        val dataIndication = resources.getStringArray(R.array.data_indication)
+        val dataCause = resources.getStringArray(R.array.data_cause)
+        val dataService = resources.getStringArray(R.array.data_service)
+
         val listEnsiklopedia = ArrayList<EnsiklopediaModel>()
         for (i in dataName.indices) {
-            val ensiklopedia = EnsiklopediaModel(dataName[i], dataPhoto.getResourceId(i, -1), dataDescription[i])
+            val ensiklopedia = EnsiklopediaModel(
+                dataName[i], dataPhoto.getResourceId(i, -1), dataDescription[i],
+                dataIndication[i], dataCause[i], dataService[i]
+            )
             listEnsiklopedia.add(ensiklopedia)
         }
         return listEnsiklopedia

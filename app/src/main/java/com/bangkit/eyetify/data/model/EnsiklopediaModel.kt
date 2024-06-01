@@ -7,5 +7,8 @@ import kotlinx.parcelize.Parcelize
 data class EnsiklopediaModel (
     val name: String,
     val photo: Int,
-    val description: String
+    val description: String,
+    val indication: String,
+    val cause: String,
+    val service: String
 ) : Parcelable
