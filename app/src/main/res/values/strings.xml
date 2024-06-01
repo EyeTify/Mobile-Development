@@ -56,16 +56,16 @@
         <item>Conjunctivitis</item>
         <item>Uveitis</item>
         <item>Hordeolum</item>
-        <item>Bulging Eyes</item>
+        <item>Exophthalmos</item>
     </string-array>
 
     <string-array name="data_description">
-        <item>Katarak adalah kondisi mata yang umum terjadi, dimana lensa mata menjadi keruh, menyebabkan penglihatan kabur atau buram. Ini bisa disebabkan oleh faktor-faktor seperti penuaan, paparan sinar UV yang berlebihan, cedera mata, atau penyakit lain seperti diabetes. Gejalanya bisa bervariasi dari penglihatan buram hingga kesulitan melihat warna secara jelas. Katarak mempengaruhi kehidupan sehari-hari dan dapat menyebabkan kesulitan dalam melakukan aktivitas seperti membaca atau mengemudi. Meskipun katarak merupakan masalah umum pada orang dewasa yang lebih tua, dapat diatasi melalui operasi penggantian lensa yang relatif aman dan efektif.</item>
-        <item>Glaukoma adalah kondisi mata serius yang ditandai oleh kerusakan saraf optik, sering kali terkait dengan tekanan intraokular yang tinggi. Penyebabnya belum sepenuhnya dipahami, tetapi faktor-faktor seperti peningkatan tekanan mata, genetika, dan usia bisa memainkan peran. Gejalanya mungkin tidak terlihat pada awalnya, tetapi ketika penyakit berkembang, penderitanya dapat mengalami penglihatan kabur, nyeri mata, sakit kepala, dan bahkan kehilangan penglihatan perifer. Karena glaukoma dapat merusak penglihatan secara permanen, penting untuk mendeteksinya sejak dini melalui pemeriksaan mata rutin. Pengobatan untuk glaukoma dapat mencakup penggunaan obat-obatan, terapi laser, atau bahkan operasi jika diperlukan, dengan tujuan untuk mengendalikan tekanan mata dan mencegah kerusakan lebih lanjut pada saraf optik.</item>
-        <item>Conjunctivitis, atau yang lebih dikenal dengan pink eye, adalah kondisi umum di mana selaput tipis yang melapisi bagian depan mata dan bagian dalam kelopak mata (konjungtiva) menjadi meradang. Penyebabnya bisa bervariasi, mulai dari infeksi virus, bakteri, alergi, hingga iritasi kimia. Gejala utamanya termasuk mata merah, gatal, berair, dan kadang disertai dengan lendir atau kerak di sekitar mata. Meskipun biasanya tidak serius, conjunctivitis tetap menular dan dapat mengganggu aktivitas sehari-hari. Pengobatannya tergantung pada penyebabnya; infeksi bakteri biasanya diobati dengan tetes mata antibiotik, sementara konjungtivitis alergi dapat merespons baik terhadap antihistamin atau obat-obatan antiinflamasi. Penting untuk menghindari menyentuh mata dan mencuci tangan secara teratur untuk mencegah penyebaran infeksi atau iritasi.</item>
-        <item>Uveitis adalah kondisi inflamasi pada lapisan tengah mata yang disebut uvea. Ini bisa terjadi secara tiba-tiba dan seringkali disebabkan oleh reaksi autoimun, infeksi, atau faktor lain yang belum diketahui. Gejalanya bisa bervariasi, tetapi umumnya mencakup mata merah, nyeri, sensitivitas terhadap cahaya, penglihatan kabur, dan kadang-kadang, "floaters" atau titik hitam di bidang pandang. Uveitis dapat mempengaruhi satu atau kedua mata dan jika tidak diobati, dapat menyebabkan kerusakan permanen pada mata, termasuk kehilangan penglihatan. Pengobatan biasanya melibatkan pemberian obat antiinflamasi, baik dalam bentuk tetes mata, obat oral, atau suntikan langsung ke mata. Dalam beberapa kasus, terapi tambahan seperti penggunaan steroid atau imunosupresan mungkin diperlukan. Penting untuk mendeteksi dan mengobati uveitis sesegera mungkin untuk mencegah kerusakan mata yang lebih lanjut.</item>
-        <item>Hordeolum, yang sering disebut sebagai "stye" atau "bisul mata", adalah pembengkakan yang terjadi di sekitar kelopak mata, biasanya disebabkan oleh infeksi bakteri pada kelenjar minyak di dalam kelopak mata atau pada folikel rambut di sekitar mata. Gejalanya mencakup kemerahan, pembengkakan, nyeri, dan terkadang rasa gatal di sekitar mata. Seringkali, hordeolum akan pecah dan mengeluarkan nanah, yang dapat membantu mempercepat proses penyembuhan. Pengobatan meliputi kompres hangat untuk membantu mengurangi pembengkakan dan nyeri, serta menghindari memencet atau menggaruk hordeolum tersebut. Dalam beberapa kasus, dokter mungkin meresepkan tetes mata antibiotik atau salep antibiotik untuk membantu mengatasi infeksi. Meskipun hordeolum biasanya tidak berbahaya dan sembuh sendiri dalam beberapa hari, jika gejalanya berlanjut atau bertambah buruk, penting untuk berkonsultasi dengan dokter mata untuk penanganan lebih lanjut.</item>
-        <item>Bulging eyes, atau exophthalmos, adalah kondisi di mana mata seseorang menonjol keluar dari orbit mereka dengan cara yang tidak biasa. Ini bisa menjadi gejala dari beberapa kondisi, termasuk hipertiroidisme, tumor di belakang mata, atau trauma. Gejalanya meliputi penonjolan mata yang jelas terlihat, kesulitan menutup sepenuhnya kelopak mata, iritasi atau keringat mata, serta perubahan dalam penglihatan atau penglihatan ganda. Penanganan tergantung pada penyebabnya; misalnya, untuk kasus yang terkait dengan hipertiroidisme, pengobatan mungkin melibatkan pengaturan hormon atau bahkan operasi untuk mengurangi pembengkakan jaringan di sekitar mata. Penting untuk berkonsultasi dengan dokter mata untuk evaluasi dan pengobatan yang tepat sesuai dengan kondisi yang mendasarinya.</item>
+        <item>Katarak itu seperti efek blur filter bawaan mata, di mana lensa mata yang biasanya jernih menjadi seperti diterangi kabut, membuat pandangan menjadi tidak jelas. Biasanya ini menjadi masalah bagi orang tua, tetapi kadang-kadang juga bisa mengganggu orang muda. Oleh karena itu, penting untuk membawa mereka ke dokter mata untuk diperiksa.</item>
+        <item>Glaukoma itu kayak ninja diam-diam yang menyerang mata, tapi bedanya, dia bikin tekanan dalam mata jadi tinggi, yang bisa merusak saraf mata dan akhirnya bikin buta. Ini bisa terjadi tanpa gejala, jadi penting untuk rutin cek mata.</item>
+        <item>Konjungtivitis itu kayak tamu tak diundang yang membuat mata kamu terlihat merah, gatal, dan terasa seperti ada yang mengganjal. Ini bisa disebabkan oleh infeksi virus, bakteri, alergi, atau bahkan iritasi oleh zat tertentu.</item>
+        <item>Uveitis adalah seperti gangguan pesta di bagian tengah mata yang disebut uvea, yang terdiri dari iris, koroid, dan badan siliaris. Ini bisa disebabkan oleh infeksi, reaksi autoimun, atau trauma, dan bisa mengakibatkan peradangan yang menyakitkan dan merusak mata jika tidak diobati.</item>
+        <item>Hordeolum, yang sering disebut juga sebagai bisul mata, adalah kondisi inflamasi pada kelenjar minyak di kelopak mata. Ini umumnya disebabkan oleh infeksi bakteri, terutama oleh Staphylococcus aureus. Kondisi ini menyebabkan terbentuknya benjolan merah, nyeri, dan bengkak pada kelopak mata.</item>
+        <item>Mata menonjol, atau dikenal sebagai exophthalmos, adalah kondisi di mana bola mata secara tidak normal menonjol keluar dari rongga mata. Hal ini bisa disebabkan oleh berbagai faktor, termasuk penyakit Graves, tumor di daerah sekitar mata, atau pembengkakan jaringan di belakang mata. Kondisi ini dapat mengganggu fungsi mata dan estetika.</item>
     </string-array>
 
     <integer-array name="data_photo">
@@ -78,30 +78,30 @@
     </integer-array>
 
     <string-array name="data_indication">
-        <item>indikasi katarak</item>
-        <item>indikasi glaukoma</item>
-        <item>indikasi conjunctivitis</item>
-        <item>indikasi uveitis</item>
-        <item>indikasi hordeolum</item>
-        <item>indikasi bulgingeyes</item>
+        <item>Ketika kamu mulai merasa seperti melihat dunia melalui kaca mata buram atau ada awan-awan kecil terbang di depan mata, bisa jadi itu katarak. Selain itu, sensitivitas yang meningkat terhadap cahaya terang, serta warna yang kurang cerah, juga bisa menjadi tanda-tanda katarak.</item>
+        <item>Nah, yang tricky dari glaukoma ini, dia bisa datang tanpa kamu sadari. Tapi kalo ada gejala, kamu mungkin akan merasa nyeri di mata, penglihatan yang kabur, mata merah, dan kadang-kadang muncul cahaya berwarna pelangi saat melihat lampu terang.</item>
+        <item>Kalau kamu kena konjungtivitis, biasanya mata kamu akan terasa gatal, berair, dan merah. Kadang-kadang juga terasa seperti ada pasir di mata, dan bisa terjadi pengelupasan pada kelopak mata. Gejalanya nggak cuma di satu mata, tapi bisa di kedua mata sekaligus.</item>
+        <item>Gejalanya bisa bervariasi tergantung pada bagian mata yang terpengaruh dan seberapa parahnya, tetapi umumnya termasuk mata merah, nyeri mata, sensitivitas terhadap cahaya, penglihatan kabur, dan mungkin juga muncul "bintik-bintik buta" di bidang pandang.</item>
+        <item>Biasanya, hordeolum terlihat sebagai benjolan merah yang terasa nyeri pada kelopak mata, baik di bagian luar (hordeolum eksternal) atau di dalam kelopak mata (hordeolum internal). Benjolan ini dapat terasa hangat saat disentuh dan kadang-kadang dapat berisi nanah. Pasien juga bisa merasakan sensasi terbakar atau gatal di sekitar area yang terkena.</item>
+        <item>Gejala utama mata menonjol termasuk penonjolan mata yang terlihat jelas, perubahan pada penampilan wajah, kesulitan menutup mata sepenuhnya (lagophthalmos), dan mungkin perubahan dalam penglihatan atau sensasi tekanan pada mata. Pasien juga mungkin mengalami keringat berlebihan atau iritasi pada mata yang menonjol.</item>
     </string-array>
 
     <string-array name="data_cause">
-        <item>penyebab katarak</item>
-        <item>penyebab glaukoma</item>
-        <item>penyebab conjunctivitis</item>
-        <item>penyebab uveitis</item>
-        <item>penyebab hordeolum</item>
-        <item>penyebab bulgingeyes</item>
+        <item>Katarak sebenarnya adalah proses alami menua, di mana lensa mata mulai mengumpulkan protein hingga menjadi tidak jernih lagi. Namun, ada beberapa faktor risiko yang dapat meningkatkan kemungkinan seseorang mengembangkan katarak, seperti riwayat keluarga, diabetes, atau kebiasaan merokok. Oleh karena itu, penting untuk menghindari asap rokok dan menjaga kesehatan mata.</item>
+        <item>Penyebabnya biasanya karena tekanan dalam mata yang tinggi, yang bisa disebabkan oleh pemblokiran aliran cairan mata atau masalah lainnya. Faktor risiko termasuk usia tua, riwayat keluarga, dan kondisi medis seperti diabetes atau tekanan darah tinggi.</item>
+        <item>Konjungtivitis bisa disebabkan oleh virus, bakteri, alergi, atau zat iritan. Faktor risiko termasuk kontak langsung dengan orang yang terinfeksi, paparan alergen seperti serbuk sari atau bulu binatang, dan penggunaan lensa kontak tanpa kebersihan yang baik.</item>
+        <item>Uveitis bisa disebabkan oleh berbagai hal, mulai dari infeksi virus atau bakteri hingga kondisi autoimun seperti arthritis reumatoid atau penyakit Crohn. Faktor risiko termasuk riwayat penyakit autoimun atau infeksi, serta faktor genetik.</item>
+        <item>Hordeolum disebabkan oleh infeksi bakteri yang masuk ke kelenjar minyak di sekitar mata. Faktor risiko untuk mengembangkan hordeolum meliputi kebersihan yang kurang, kontak langsung dengan bakteri, penggunaan kosmetik yang berlebihan, atau kondisi medis yang melemahkan sistem kekebalan tubuh.</item>
+        <item>Mata menonjol bisa disebabkan oleh beberapa kondisi, di antaranya adalah penyakit Graves, yang merupakan penyebab umum exophthalmos. Faktor risiko lainnya termasuk riwayat keluarga dengan kondisi serupa, penyakit tiroid, atau paparan radiasi. Penggunaan obat-obatan tertentu atau kebiasaan merokok juga dapat meningkatkan risiko.</item>
     </string-array>
 
     <string-array name="data_service">
-        <item>pengobatan katarak</item>
-        <item>pengobatan glaukoma</item>
-        <item>pengobatan conjunctivitis</item>
-        <item>pengobatan uveitis</item>
-        <item>pengobatan hordeolum</item>
-        <item>pengobatan bulgingeyes</item>
+        <item>Untuk mengobati katarak, dokter mata biasanya akan merekomendasikan operasi untuk mengganti lensa mata yang keruh dengan yang baru. Namun, untuk mengurangi risiko atau menghambat perkembangannya, kamu bisa menggunakan kacamata hitam untuk melindungi mata dari sinar UV, menjaga pola makan yang sehat, dan rutin memeriksakan mata ke dokter. Selain itu, menghindari kebiasaan yang dapat memperburuk kesehatan mata juga sangat penting.</item>
+        <item>Glaukoma tidak bisa sembuh total, tapi bisa dikendalikan dengan obat-obatan, tetes mata, atau bahkan operasi. Untuk mencegahnya, penting untuk menjaga tekanan mata dalam batas normal dengan perawatan yang tepat dan melakukan pemeriksaan mata rutin.</item>
+        <item>Untuk mengobati konjungtivitis, tergantung pada penyebabnya. Dokter mungkin akan meresepkan tetes mata antibiotik untuk infeksi bakteri, atau obat antihistamin untuk alergi. Untuk mencegah penyebaran, penting untuk tidak mengucek mata, menjaga kebersihan tangan, dan menghindari berbagi handuk atau barang-barang pribadi dengan orang lain jika kamu terinfeksi.</item>
+        <item>Pengobatan uveitis bergantung pada penyebabnya, tetapi sering melibatkan penggunaan obat antiinflamasi seperti tetes mata steroid atau obat oral. Penting untuk mendapatkan perawatan segera untuk mencegah kerusakan permanen pada mata. Pencegahan uveitis biasanya melibatkan mengelola kondisi kesehatan yang mendasarinya, seperti mengendalikan penyakit autoimun atau menghindari infeksi jika mungkin.</item>
+        <item>Pengobatan hordeolum sering melibatkan penerapan kompres hangat secara teratur untuk membantu membuka kelenjar yang tersumbat dan mengurangi pembengkakan. Dokter juga dapat meresepkan antibiotik topikal seperti tetes mata atau salep untuk membantu mengatasi infeksi. Pencegahan hordeolum melibatkan menjaga kebersihan mata dan kelopak mata, menghindari kontak dengan bakteri yang berpotensi, serta menghindari penggunaan kosmetik yang berlebihan di sekitar mata.</item>
+        <item>Pengobatan untuk mata menonjol tergantung pada penyebabnya. Untuk kondisi seperti penyakit Graves, pengobatan mungkin melibatkan terapi hormon, obat antiinflamasi, atau bahkan pembedahan untuk mengurangi tekanan pada mata. Pencegahan mata menonjol seringkali berkaitan dengan pengelolaan kondisi medis yang mendasarinya, seperti mengontrol penyakit tiroid atau menghindari faktor risiko tertentu seperti merokok atau paparan radiasi yang berlebihan.</item>
     </string-array>
 
 
