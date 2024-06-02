@@ -49,6 +49,12 @@
     <string name="indikasi">Gejala Umum</string>
     <string name="penyebab">Penyebab dan Faktor Resiko</string>
     <string name="pengobatan">Pengobatan dan Pencegahan</string>
+    <string name="realtime_duration_text">Realtime Phone Duration</string>
+    <string name="title_duration_phone">Durasi Penggunaan</string>
+    <string name="text_duration_phone">12 Hours</string>
+    <string name="result_status_phone">Aman</string>
+    <string name="detail">See Details</string>
+    <string name="text_with_bullet"> \u2022 Status</string>
 
     <string-array name="data_name">
         <item>Cataract</item>

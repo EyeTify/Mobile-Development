@@ -7,13 +7,96 @@
     tools:context=".ui.fragment.HomeFragment"
     android:background="@drawable/gradient_background">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="32dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:text="@string/home" />
+        app:cardCornerRadius="16dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/title_duration_active_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/realtime_duration_text"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:fontFamily="@font/semibold"
+                android:textColor="@color/black"
+                android:layout_margin="16dp"/>
+
+            <com.mikhaellopez.circularprogressbar.CircularProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/title_duration_active_phone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginHorizontal="64dp"
+                android:layout_marginTop="16dp"
+                />
+
+            <TextView
+                android:id="@+id/info_title_active_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/title_duration_active_phone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginVertical="84dp"
+                android:text="@string/title_duration_phone"
+                android:fontFamily="@font/medium"
+                android:textSize="11sp"/>
+
+            <TextView
+                android:id="@+id/info_result_active_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/info_title_active_phone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="@string/text_duration_phone"
+                android:textSize="16sp"
+                android:fontFamily="@font/semibold"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/info_result_status_active_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/result_status_phone"
+                app:layout_constraintTop_toBottomOf="@+id/info_result_active_phone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textSize="20sp"
+                android:fontFamily="@font/bold"
+                android:textColor="@color/succes"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_duration_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/progress_bar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="@string/detail"
+                android:textAllCaps="false"
+                android:layout_marginTop="16dp"
+                android:textSize="12sp"
+                android:fontFamily="@font/regular"
+                app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Full"/>
+
+<!--            todo : add explanaton for color meaning green red yellow for progress grey is remaining value-->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

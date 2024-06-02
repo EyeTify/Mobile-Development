@@ -73,4 +73,8 @@ dependencies {
 
     implementation (libs.glide)
     implementation ("de.hdodenhof:circleimageview:3.1.0")
+
+//    todo : Import Custom Progress Bar 
+    implementation ("com.mikhaellopez:circularprogressbar:3.1.0")
+
 }
