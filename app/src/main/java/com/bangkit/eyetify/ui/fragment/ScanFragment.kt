@@ -1,11 +1,15 @@
 package com.bangkit.eyetify.ui.fragment
 
+import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.viewModels
@@ -44,12 +48,34 @@ class ScanFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.addImageButton.setOnClickListener{
-            val intent = Intent(this.context, ResultActivity::class.java)
-            startActivity(intent)
+            Log.d("ScanFragment", "Add Image Button Clicked")
+            showPopup()
         }
 
         binding.analyzeImageButton.setOnClickListener{
             viewModel.logout()
+        }
+    }
+
+
+
+    private fun showPopup() {
+        val dialog = Dialog(requireContext())
+        dialog.setCancelable(true)
+        dialog.setContentView(R.layout.pop_up_action_dialog)
+        dialog.show()
+
+        val btnCamera = dialog.findViewById<Button>(R.id.camera_btn)
+        val btnGalery = dialog.findViewById<Button>(R.id.gallery_btn)
+
+        btnCamera.setOnClickListener {
+            Toast.makeText(requireContext(), "Camera", Toast.LENGTH_SHORT).show()
+            dialog.setCancelable(true)
+        }
+
+        btnGalery.setOnClickListener {
+            Toast.makeText(requireContext(), "Galery", Toast.LENGTH_SHORT).show()
+            dialog.setCancelable(true)
         }
     }
 

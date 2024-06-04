@@ -55,6 +55,10 @@
     <string name="result_status_phone">Aman</string>
     <string name="detail">See Details</string>
     <string name="text_with_bullet"> \u2022 Status</string>
+    <string name="Gallery">Galery</string>
+    <string name="Camera">Camera</string>
+    <string name="upload_image">Upload Image</string>
+    <string name="desc_upload_image">Use Camera Or Gallery to \nPick Image</string>
 
     <string-array name="data_name">
         <item>Cataract</item>
