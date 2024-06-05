@@ -53,7 +53,7 @@ class ScanFragment : Fragment() {
         }
 
         binding.analyzeImageButton.setOnClickListener{
-            viewModel.logout()
+            Toast.makeText(requireContext(), "Analyze Button Clicked", Toast.LENGTH_SHORT).show()
         }
     }
 

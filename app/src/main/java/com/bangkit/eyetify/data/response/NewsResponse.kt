@@ -3,7 +3,6 @@ package com.bangkit.eyetify.data.response
 import com.google.gson.annotations.SerializedName
 
 data class NewsResponse(
-
     @field:SerializedName("NewsResponse")
     val newsResponse: List<NewsResponseItem>
 )
@@ -42,4 +41,5 @@ data class Source(
 
     @field:SerializedName("id")
     val id: Any
+
 )

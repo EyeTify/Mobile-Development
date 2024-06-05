@@ -60,6 +60,10 @@
     <string name="upload_image">Upload Image</string>
     <string name="desc_upload_image">Use Camera Or Gallery to \nPick Image</string>
     <string name="published_date">Published Date</string>
+    <string name="Berikan_Rating">"Berikan Rating "</string>
+    <string name="Syarat_dan_Ketentuan">Syarat Dan Ketentuan</string>
+    <string name="kebijakan">Kebijakan Privasi</string>
+    <string name="close">Close</string>
 
     <string-array name="data_name">
         <item>Cataract</item>
