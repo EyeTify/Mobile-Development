@@ -18,6 +18,12 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField(
+            "String",
+            "NEWS_URL",
+            "\"https://articles-features-api-kodyfcb2bq-et.a.run.app/\""
+        )
     }
 
     buildTypes {
@@ -39,6 +45,7 @@ android {
 
     buildFeatures{
         viewBinding = true
+        buildConfig = true
     }
 }
 

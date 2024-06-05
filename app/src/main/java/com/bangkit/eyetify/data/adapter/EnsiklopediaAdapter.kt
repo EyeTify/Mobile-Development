@@ -1,4 +1,4 @@
-package com.bangkit.eyetify.data.injection.adapter
+package com.bangkit.eyetify.data.adapter
 
 import android.content.Intent
 import android.view.LayoutInflater

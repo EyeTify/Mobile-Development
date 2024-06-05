@@ -59,6 +59,7 @@
     <string name="Camera">Camera</string>
     <string name="upload_image">Upload Image</string>
     <string name="desc_upload_image">Use Camera Or Gallery to \nPick Image</string>
+    <string name="published_date">Published Date</string>
 
     <string-array name="data_name">
         <item>Cataract</item>
