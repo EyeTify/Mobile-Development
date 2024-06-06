@@ -7,12 +7,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bangkit.eyetify.R
 import com.bangkit.eyetify.data.adapter.ArticleAdapter
 import com.bangkit.eyetify.data.adapter.EnsiklopediaAdapter
+import com.bangkit.eyetify.data.adapter.SearchArticleAdapter
 import com.bangkit.eyetify.data.model.EnsiklopediaModel
 import com.bangkit.eyetify.databinding.FragmentArticleBinding
 import com.bangkit.eyetify.ui.viewmodel.factory.ArticleViewModelFactory
@@ -21,19 +23,17 @@ import com.bangkit.eyetify.data.preference.Result
 
 class ArticleFragment : Fragment() {
 
-    private lateinit var rvEnsiklopedia : RecyclerView
+    private lateinit var rvEnsiklopedia: RecyclerView
     private val list = ArrayList<EnsiklopediaModel>()
     private lateinit var articleAdapter: ArticleAdapter
+    private lateinit var searchArticleAdapter: SearchArticleAdapter
 
     private val articleViewModel by viewModels<ArticleViewModel> {
         ArticleViewModelFactory.getInstance()
     }
 
     private var _binding: FragmentArticleBinding? = null
-    private val binding get()= _binding!!
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -48,6 +48,7 @@ class ArticleFragment : Fragment() {
 
         setupRecyclerEnsiklopedia()
         setupRecyclerArticle()
+        setupSearchView()
         observeArticles()
         articleViewModel.getAllArticles()
     }
@@ -63,8 +64,25 @@ class ArticleFragment : Fragment() {
 
     private fun setupRecyclerArticle() {
         articleAdapter = ArticleAdapter()
+        searchArticleAdapter = SearchArticleAdapter()
         binding.rvArticle.layoutManager = LinearLayoutManager(requireContext())
         binding.rvArticle.adapter = articleAdapter
+    }
+
+    private fun setupSearchView() {
+        val searchView: SearchView = binding.searchView
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                query?.let {
+                    articleViewModel.searchHealthNews(it)
+                }
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                return true
+            }
+        })
     }
 
     private fun observeArticles() {
@@ -73,7 +91,23 @@ class ArticleFragment : Fragment() {
                 is Result.DataLoading -> showLoading(true)
                 is Result.DataSuccess -> {
                     showLoading(false)
+                    binding.rvArticle.adapter = articleAdapter
                     articleAdapter.submitList(result.data)
+                }
+                is Result.DataError -> {
+                    showLoading(false)
+                    Toast.makeText(requireContext(), "Error: ${result.error}", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+
+        articleViewModel.searchResults.observe(viewLifecycleOwner) { result ->
+            when (result) {
+                is Result.DataLoading -> showLoading(true)
+                is Result.DataSuccess -> {
+                    showLoading(false)
+                    binding.rvArticle.adapter = searchArticleAdapter
+                    searchArticleAdapter.submitList(result.data)
                 }
                 is Result.DataError -> {
                     showLoading(false)
@@ -116,5 +150,4 @@ class ArticleFragment : Fragment() {
     private fun showLoading(isLoading: Boolean) {
         binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
     }
-
 }

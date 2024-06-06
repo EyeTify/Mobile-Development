@@ -81,9 +81,17 @@
 
         />
 
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/search_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:queryHint="Search articles..."
+        app:layout_constraintTop_toBottomOf="@id/title_article"
+        android:layout_marginTop="16dp"/>
+
     <androidx.cardview.widget.CardView
         android:id="@+id/card_article"
-        app:layout_constraintTop_toBottomOf="@+id/title_article"
+        app:layout_constraintTop_toBottomOf="@+id/search_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="16dp"
