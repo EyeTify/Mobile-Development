@@ -64,6 +64,8 @@
     <string name="Syarat_dan_Ketentuan">Syarat Dan Ketentuan</string>
     <string name="kebijakan">Kebijakan Privasi</string>
     <string name="close">Close</string>
+    <string name="title_reset_password_page">Reset Password</string>
+    <string name="reset_password_button">Send</string>
 
     <string-array name="data_name">
         <item>Cataract</item>

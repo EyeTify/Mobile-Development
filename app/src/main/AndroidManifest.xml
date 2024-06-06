@@ -13,9 +13,11 @@
         android:theme="@style/Theme.Eyetify"
         tools:targetApi="31">
         <activity
+            android:name=".ui.activity.authentication.ResetPasswordActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.fragment.article.DetailEnsiklopediaActivity"
-            android:exported="false"
-            />
+            android:exported="false" />
         <activity
             android:name=".ui.activity.authentication.RegisterActivity"
             android:exported="false" />

@@ -9,6 +9,7 @@ import com.bangkit.eyetify.data.response.RegisterResponse
 import com.bangkit.eyetify.data.retrofit.AuthService
 import com.bangkit.eyetify.data.preference.Result
 import com.bangkit.eyetify.data.response.PostResponse
+import com.bangkit.eyetify.data.response.ResetPasswordResponse
 import com.google.gson.Gson
 import kotlinx.coroutines.flow.Flow
 import retrofit2.HttpException
@@ -58,6 +59,23 @@ class AuthRepository(
             Result.DataError(errorResponse.message)
         } catch (e: Exception) {
             Result.DataError("Login failed")
+        }
+    }
+
+    suspend fun resetPassword(email: String): Result<ResetPasswordResponse> {
+        return try {
+            val response = authService.resetPassword(email)
+            if (!response.error) {
+                Result.DataSuccess(response)
+            } else {
+                Result.DataError(response.message)
+            }
+        } catch (e: HttpException) {
+            val errorBody = e.response()?.errorBody()?.string()
+            val errorResponse = Gson().fromJson(errorBody, PostResponse::class.java)
+            Result.DataError(errorResponse.message)
+        } catch (e: Exception) {
+            Result.DataError("Reset password failed")
         }
     }
 
