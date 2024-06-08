@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bangkit.eyetify.data.response.ItemsItem
+import com.bangkit.eyetify.data.utils.DateFormatter
 import com.bangkit.eyetify.databinding.ItemNewsBinding
+import com.bumptech.glide.Glide
 
 class SearchArticleAdapter : RecyclerView.Adapter<SearchArticleAdapter.ArticleViewHolder>() {
 
@@ -16,6 +18,10 @@ class SearchArticleAdapter : RecyclerView.Adapter<SearchArticleAdapter.ArticleVi
         fun bind(article: ItemsItem) {
             binding.tvNewsTitle.text = article.title
             binding.tvNewsDescription.text = article.url
+            Glide.with(binding.root)
+                .load(article.image)
+                .into(binding.ivNews)
+            binding.tvItemPublishedDate.text = DateFormatter.formatDate(article.publishedAt)
 
             itemView.setOnClickListener {
                 val intent = Intent(Intent.ACTION_VIEW)

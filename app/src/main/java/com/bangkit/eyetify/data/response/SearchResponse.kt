@@ -20,5 +20,11 @@ data class ItemsItem(
 	val title: String? = null,
 
 	@field:SerializedName("url")
-	val url: String? = null
+	val url: String? = null,
+
+	@field:SerializedName("image")
+	val image: String? = null,
+
+	@field:SerializedName("publishedAt")
+	val publishedAt: String,
 )
