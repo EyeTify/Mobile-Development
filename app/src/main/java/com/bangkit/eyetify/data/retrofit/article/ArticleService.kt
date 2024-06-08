@@ -1,7 +1,6 @@
 package com.bangkit.eyetify.data.retrofit.article
 
 import com.bangkit.eyetify.data.response.NewsResponseItem
-import com.bangkit.eyetify.data.response.SearchResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -11,6 +10,6 @@ interface ArticleService {
 
     @GET("search-articles")
     suspend fun searchHealthNews(
-        @Query("title") keyword: String
-    ): SearchResponse
+        @Query("title") title: String
+    ): List<NewsResponseItem>
 }

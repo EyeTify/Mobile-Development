@@ -30,7 +30,7 @@ class ArticleAdapter : ListAdapter<NewsResponseItem, ArticleAdapter.MyViewHolder
             Glide.with(binding.root)
                 .load(currentItem.urlToImage)
                 .into(binding.ivNews)
-            binding.tvItemPublishedDate.text = DateFormatter.formatDate(currentItem.publishedAt)
+            binding.tvItemPublishedDate.text = DateFormatter.formatDate(currentItem.publishedAt.toString())
 
             itemView.setOnClickListener {
                 val intent = Intent(Intent.ACTION_VIEW)
