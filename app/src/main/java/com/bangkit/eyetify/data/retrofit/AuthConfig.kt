@@ -1,5 +1,6 @@
 package com.bangkit.eyetify.data.retrofit
 
+import com.bangkit.eyetify.BuildConfig
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -23,7 +24,7 @@ class AuthConfig {
                 .addInterceptor(authInterceptor)
                 .build()
             val retrofit = Retrofit.Builder()
-                .baseUrl("https://asia-southeast2-eyetifycapstone.cloudfunctions.net/app/api/")
+                .baseUrl(BuildConfig.AUTH_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build()

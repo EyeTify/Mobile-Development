@@ -24,6 +24,14 @@ android {
             "NEWS_URL",
             "\"https://articles-features-api-kodyfcb2bq-et.a.run.app/\""
         )
+
+
+        buildConfigField(
+            "String",
+            "AUTH_URL",
+            "\"https://asia-southeast2-eyetifycapstone.cloudfunctions.net/app/api/\""
+        )
+
     }
 
     buildTypes {
