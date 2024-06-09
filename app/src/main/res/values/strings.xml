@@ -69,6 +69,8 @@
     <string name="congrats">Congratulations</string>
     <string name="message_succes_activation">Account has been registered \n Check Your Email For Activied Your Account</string>
     <string name="lets_started_message">Lets Started</string>
+    <string name="username_not_found">Username tidak ditemukan</string>
+    <string name="email_not_found">Email tidak ditemukan</string>
 
     <string-array name="data_name">
         <item>Cataract</item>
