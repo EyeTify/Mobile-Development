@@ -66,6 +66,9 @@
     <string name="close">Close</string>
     <string name="title_reset_password_page">Reset Password</string>
     <string name="reset_password_button">Send</string>
+    <string name="congrats">Congratulations</string>
+    <string name="message_succes_activation">Account has been registered \n Check Your Email For Activied Your Account</string>
+    <string name="lets_started_message">Lets Started</string>
 
     <string-array name="data_name">
         <item>Cataract</item>

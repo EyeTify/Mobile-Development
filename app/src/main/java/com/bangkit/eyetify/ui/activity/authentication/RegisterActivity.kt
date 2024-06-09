@@ -88,15 +88,7 @@ class RegisterActivity : AppCompatActivity() {
                 }
                 is Result.DataSuccess -> {
                     showLoading(false)
-                    AlertDialog.Builder(this).apply {
-                        setTitle("Berhasil")
-                        setMessage("Akun ${binding.nameEditText.text.toString()} sudah jadi nih. Yuk Login Dulu.")
-                        setPositiveButton("Lanjut") { _, _ ->
-                            finish()
-                        }
-                        create()
-                        show()
-                    }
+                    startActivity(Intent(this, EmailActivationActivity::class.java))
                 }
                 is Result.DataError -> {
                     showLoading(false)

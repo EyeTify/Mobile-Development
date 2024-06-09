@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.authentication.EmailActivationActivity">
+
+    <ImageView
+        android:id="@+id/image_key"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/photo"
+        android:src="@drawable/SuccesRegistration"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="32dp"
+        />
+
+    <TextView
+        android:id="@+id/text_succes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/congrats"
+        android:fontFamily="@font/bold"
+        app:layout_constraintTop_toBottomOf="@id/image_key"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="24sp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/message_success"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/message_succes_activation"
+        app:layout_constraintTop_toBottomOf="@id/text_succes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="16sp"
+        android:lineHeight="20sp"
+        android:textAlignment="center"/>
+
+    <Button
+        android:id="@+id/btn_start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/message_success"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp"
+        app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Full"
+        android:backgroundTint="@color/succes"
+        android:text="@string/lets_started_message"
+        android:fontFamily="@font/bold"
+        android:textAllCaps="false"
+        android:paddingVertical="10dp"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
