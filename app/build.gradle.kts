@@ -86,4 +86,6 @@ dependencies {
 
     implementation("com.github.JustinGeorgeJoseph:PopupBarChart:1.0.1")
 
+    implementation("com.facebook.shimmer:shimmer:0.5.0")
+
 }

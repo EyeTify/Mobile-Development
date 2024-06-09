@@ -94,7 +94,9 @@
             android:id="@+id/search_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:queryHint="Search articles..."
+            app:iconifiedByDefault="false"
+            app:queryHint="Search articles..."
+            app:queryBackground="@android:color/transparent"
             app:layout_constraintTop_toBottomOf="@id/title_article"
             android:background="@android:color/transparent"
             />
@@ -118,6 +120,29 @@
             android:layout_height="match_parent"
             android:padding="0dp">
 
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmerFrameLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:shimmer_duration="1000"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+
+                    <include layout="@layout/item_news_shimmer"/>
+                    <include layout="@layout/item_news_shimmer"/>
+                    <include layout="@layout/item_news_shimmer"/>
+
+                </LinearLayout>
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_article"
                 android:layout_width="match_parent"
@@ -125,18 +150,8 @@
                 tools:listitem="@layout/item_news"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="gone"
                 />
-
-            <ProgressBar
-                android:id="@+id/progress_bar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="parent"/>
-
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

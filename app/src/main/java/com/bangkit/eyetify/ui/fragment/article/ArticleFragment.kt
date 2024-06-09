@@ -134,7 +134,15 @@ class ArticleFragment : Fragment() {
     }
 
     private fun showLoading(isLoading: Boolean) {
-        binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
+        if (isLoading) {
+            binding.shimmerFrameLayout.startShimmer()
+            binding.shimmerFrameLayout.visibility = View.VISIBLE
+            binding.rvArticle.visibility = View.GONE
+        } else {
+            binding.shimmerFrameLayout.stopShimmer()
+            binding.shimmerFrameLayout.visibility = View.GONE
+            binding.rvArticle.visibility = View.VISIBLE
+        }
     }
 
 }
