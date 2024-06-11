@@ -1,6 +1,7 @@
 package com.bangkit.eyetify.ui.fragment
 
 import android.app.Dialog
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
@@ -20,6 +21,7 @@ import com.bangkit.eyetify.data.retrofit.ScanConfig
 import com.bangkit.eyetify.data.utils.reduceFileImage
 import com.bangkit.eyetify.data.utils.uriToFile
 import com.bangkit.eyetify.databinding.FragmentScanBinding
+import com.bangkit.eyetify.ui.activity.ResultActivity
 import com.bangkit.eyetify.ui.viewmodel.factory.AuthViewModelFactory
 import com.bangkit.eyetify.ui.viewmodel.model.MainViewModel
 import com.google.gson.Gson
@@ -128,10 +130,24 @@ class ScanFragment : Fragment() {
                     val response = apiService.uploadImage(multipartBody)
 
                     response.data?.let { data ->
+                        // Tampilkan hasil
                         binding.textTitleUpload.text = run {
                             data.result?.let { showToast(it) }
                             data.result
                         }
+
+                        binding.textDescriptionUpload.text = run {
+                            data.suggestion?.let { showToast(it) }
+                            data.suggestion
+                        }
+
+                        // Arahkan ke ResultActivity dan sertakan hasil analisis
+                        val intent = Intent(requireContext(), ResultActivity::class.java)
+                        intent.putExtra("imageExtra", currentImageUri.toString())
+                        intent.putExtra("result", data.result)
+                        intent.putExtra("suggestion", data.suggestion)
+                        startActivity(intent)
+                        requireActivity().finish() // Optional, menutup activity saat ini jika perlu
                     } ?: showToast("No data received from the server.")
 
                 } catch (e: HttpException) {
@@ -146,12 +162,9 @@ class ScanFragment : Fragment() {
         } ?: showToast(getString(R.string.empty_image_warning))
     }
 
-
     private fun showToast(message: String) {
         Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
     }
-
-
 
     companion object {
         @JvmStatic
