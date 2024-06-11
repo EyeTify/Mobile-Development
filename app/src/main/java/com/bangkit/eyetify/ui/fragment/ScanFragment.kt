@@ -1,7 +1,7 @@
 package com.bangkit.eyetify.ui.fragment
 
 import android.app.Dialog
-import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -10,20 +10,31 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
-import androidx.activity.viewModels
-import androidx.appcompat.app.AlertDialog
+import androidx.activity.result.PickVisualMediaRequest
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import com.bangkit.eyetify.R
+import com.bangkit.eyetify.data.response.FileUploadResponse
+import com.bangkit.eyetify.data.retrofit.ScanConfig
+import com.bangkit.eyetify.data.utils.reduceFileImage
+import com.bangkit.eyetify.data.utils.uriToFile
 import com.bangkit.eyetify.databinding.FragmentScanBinding
-import com.bangkit.eyetify.ui.activity.ResultActivity
 import com.bangkit.eyetify.ui.viewmodel.factory.AuthViewModelFactory
 import com.bangkit.eyetify.ui.viewmodel.model.MainViewModel
-import com.bangkit.eyetify.ui.viewmodel.model.RegisterViewModel
+import com.google.gson.Gson
+import kotlinx.coroutines.launch
+import okhttp3.MediaType.Companion.toMediaType
+import okhttp3.MultipartBody
+import okhttp3.RequestBody.Companion.asRequestBody
+import retrofit2.HttpException
 
 class ScanFragment : Fragment() {
 
     private var _binding: FragmentScanBinding? = null
     private val binding get()= _binding!!
+
+    private var currentImageUri: Uri? = null
 
     private val viewModel by viewModels<MainViewModel> {
         AuthViewModelFactory.getInstance(requireContext())
@@ -53,7 +64,7 @@ class ScanFragment : Fragment() {
         }
 
         binding.analyzeImageButton.setOnClickListener{
-            Toast.makeText(requireContext(), "Analyze Button Clicked", Toast.LENGTH_SHORT).show()
+            uploadImage()
         }
     }
 
@@ -69,15 +80,78 @@ class ScanFragment : Fragment() {
         val btnGalery = dialog.findViewById<Button>(R.id.gallery_btn)
 
         btnCamera.setOnClickListener {
-            Toast.makeText(requireContext(), "Camera", Toast.LENGTH_SHORT).show()
-            dialog.setCancelable(true)
+            startGallery()
+            dialog.dismiss()
         }
 
         btnGalery.setOnClickListener {
-            Toast.makeText(requireContext(), "Galery", Toast.LENGTH_SHORT).show()
-            dialog.setCancelable(true)
+            startGallery()
+            dialog.dismiss()
         }
     }
+
+    private fun startGallery() {
+        launcherGallery.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly))
+    }
+
+    private val launcherGallery = registerForActivityResult(
+        ActivityResultContracts.PickVisualMedia()
+    ) { uri: Uri? ->
+        if (uri != null) {
+            currentImageUri = uri
+            showImage()
+        } else {
+            Log.d("Photo Picker", "No media selected")
+        }
+    }
+
+    private fun showImage() {
+        currentImageUri?.let {
+            Log.d("Image URI", "showImage: $it")
+            binding.imagePlaceholder.setImageURI(it)
+        }
+    }
+
+    private fun uploadImage() {
+        currentImageUri?.let { uri ->
+            val imageFile = uriToFile(uri, requireContext()).reduceFileImage()
+            Log.d("Image Classification File", "File path: ${imageFile.path}")
+            val requestImageFile = imageFile.asRequestBody("image/jpeg".toMediaType())
+            val multipartBody = MultipartBody.Part.createFormData(
+                "image",
+                imageFile.name,
+                requestImageFile
+            )
+            lifecycleScope.launch {
+                try {
+                    val apiService = ScanConfig.getApiService()
+                    val response = apiService.uploadImage(multipartBody)
+
+                    response.data?.let { data ->
+                        binding.textTitleUpload.text = run {
+                            data.result?.let { showToast(it) }
+                            data.result
+                        }
+                    } ?: showToast("No data received from the server.")
+
+                } catch (e: HttpException) {
+                    val errorBody = e.response()?.errorBody()?.string()
+                    val errorResponse = Gson().fromJson(errorBody, FileUploadResponse::class.java)
+                    showToast(errorResponse.message.toString())
+                } catch (e: Exception) {
+                    showToast("An unexpected error occurred.")
+                    Log.e("Upload Error", "Error: ${e.message}", e)
+                }
+            }
+        } ?: showToast(getString(R.string.empty_image_warning))
+    }
+
+
+    private fun showToast(message: String) {
+        Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
+    }
+
+
 
     companion object {
         @JvmStatic

@@ -71,6 +71,7 @@
     <string name="lets_started_message">Lets Started</string>
     <string name="username_not_found">Username tidak ditemukan</string>
     <string name="email_not_found">Email tidak ditemukan</string>
+    <string name="empty_image_warning">Image is Null</string>
 
     <string-array name="data_name">
         <item>Cataract</item>
