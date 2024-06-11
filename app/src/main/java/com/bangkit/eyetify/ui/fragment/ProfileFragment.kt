@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.viewModels
 import com.bangkit.eyetify.R
 import com.bangkit.eyetify.databinding.FragmentProfileBinding
@@ -66,7 +67,7 @@ class ProfileFragment : Fragment() {
         }
 
         binding.cardLogout.setOnClickListener{
-            viewModel.logout()
+            showPopupLogout()
         }
     }
 
@@ -81,6 +82,25 @@ class ProfileFragment : Fragment() {
         btnClose.setOnClickListener {
             dialog.dismiss()
         }
+    }
+
+    private fun showPopupLogout() {
+        val dialog = Dialog(requireContext())
+        dialog.setContentView(R.layout.pop_up_logout_dialog)
+
+        val btnCancel = dialog.findViewById<Button>(R.id.btn_cancel)
+        val btnLogout = dialog.findViewById<Button>(R.id.btn_logout)
+
+        btnCancel.setOnClickListener {
+            dialog.dismiss()
+        }
+
+        btnLogout.setOnClickListener {
+            viewModel.logout()
+            dialog.dismiss()
+        }
+
+        dialog.show()
     }
 
     private fun loadUsername(): String? {
