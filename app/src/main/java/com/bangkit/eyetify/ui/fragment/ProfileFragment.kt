@@ -55,11 +55,7 @@ class ProfileFragment : Fragment() {
 
         displayProfile()
 
-        binding.profileCardMyprofile.setOnClickListener{
-            showPopup()
-        }
-
-        binding.profileCardRating.setOnClickListener{
+        binding.profileCardAbout.setOnClickListener{
             showPopup()
         }
 
