@@ -1,5 +1,6 @@
 package com.bangkit.eyetify.ui.fragment
 
+import android.app.Activity
 import android.app.Dialog
 import android.content.Intent
 import android.graphics.Color
@@ -20,6 +21,7 @@ import androidx.lifecycle.lifecycleScope
 import com.bangkit.eyetify.R
 import com.bangkit.eyetify.data.response.FileUploadResponse
 import com.bangkit.eyetify.data.retrofit.ScanConfig
+import com.bangkit.eyetify.data.utils.getImageUri
 import com.bangkit.eyetify.data.utils.reduceFileImage
 import com.bangkit.eyetify.data.utils.uriToFile
 import com.bangkit.eyetify.databinding.FragmentScanBinding
@@ -27,11 +29,14 @@ import com.bangkit.eyetify.ui.activity.ResultActivity
 import com.bangkit.eyetify.ui.viewmodel.factory.AuthViewModelFactory
 import com.bangkit.eyetify.ui.viewmodel.model.MainViewModel
 import com.google.gson.Gson
+import com.yalantis.ucrop.UCrop
 import kotlinx.coroutines.launch
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
 import retrofit2.HttpException
+import java.io.File
+import java.util.Date
 
 class ScanFragment : Fragment() {
 
@@ -85,7 +90,7 @@ class ScanFragment : Fragment() {
         val btnGalery = dialog.findViewById<Button>(R.id.gallery_btn)
 
         btnCamera.setOnClickListener {
-            startGallery()
+            startCamera()
             dialog.dismiss()
         }
 
@@ -103,10 +108,46 @@ class ScanFragment : Fragment() {
         ActivityResultContracts.PickVisualMedia()
     ) { uri: Uri? ->
         if (uri != null) {
-            currentImageUri = uri
-            showImage()
+            imageCropper(uri)
         } else {
             Log.d("Photo Picker", "No media selected")
+        }
+    }
+
+    private fun startCamera() {
+        currentImageUri = getImageUri(requireContext())
+        launcherIntentCamera.launch(currentImageUri)
+    }
+
+    private val launcherIntentCamera = registerForActivityResult(
+        ActivityResultContracts.TakePicture()
+    ) { isSuccess ->
+        if (isSuccess) {
+            currentImageUri?.let { imageCropper(it) }
+        }
+    }
+
+    private val startCropper = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){ result ->
+        if (result.resultCode == Activity.RESULT_OK) {
+            val resultUri = UCrop.getOutput(result.data!!)
+            if (resultUri != null) {
+                currentImageUri = resultUri
+                showImage()
+            }
+        } else if (result.resultCode == UCrop.RESULT_ERROR) {
+            val error = UCrop.getError(result.data!!)
+            showToast("Error: ${error?.localizedMessage}")
+        }
+    }
+
+    private fun imageCropper(uri: Uri){
+        val timestamp = Date().time
+        val cachedImage = File(requireContext().cacheDir, "cropped_image_${timestamp}.jpg")
+        val destinationUri = Uri.fromFile(cachedImage)
+        val cropper = UCrop.of(uri, destinationUri).withAspectRatio(1f, 1f)
+
+        cropper.getIntent(requireContext()).apply {
+            startCropper.launch(this)
         }
     }
 
