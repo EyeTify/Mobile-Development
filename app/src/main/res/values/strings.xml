@@ -5,7 +5,7 @@
     <string name="message_welcome_page">Lorem ipsum dolor sit amet consectetur. Ac non sed mauris in. Arcu lacus felis in urna turpis arcu sapien lacus </string>
     <string name="title_welcome_page">Your Health &amp; Wellness On-Demand</string>
     <string name="title_signup_page">Create Account</string>
-    <string name="email">Email or Phone Number</string>
+    <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="message_login_page">Start learning with login your account</string>
     <string name="title_login_page">Login Account</string>
@@ -74,6 +74,11 @@
     <string name="empty_image_warning">Image is Null</string>
     <string name="cancel">Batal</string>
     <string name="ya">Ya</string>
+    <string name="enter_your_email">Enter your email</string>
+    <string name="enter_your_username">Enter your username</string>
+    <string name="confirm_your_password">Confirm your password</string>
+    <string name="enter_your_password">Enter your password</string>
+    <string name="language">Bahasa</string>
 
     <string-array name="data_name">
         <item>Cataract</item>

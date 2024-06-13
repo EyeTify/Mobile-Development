@@ -12,13 +12,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:cardCornerRadius="32dp"
+        app:cardCornerRadius="20dp"
         android:padding="16dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingVertical="100dp">
+            android:paddingVertical="20dp">
 
             <TextView
                 android:id="@+id/title_choose_photo_picker"

@@ -15,7 +15,7 @@ class PasswordEditText @JvmOverloads constructor(
 ) : AppCompatEditText(context, attrs, defStyleAttr) {
 
     init {
-        hint = "Create your password"
+        hint = context.getString(R.string.enter_your_password)
         textAlignment = View.TEXT_ALIGNMENT_VIEW_START
         setTextSize(TypedValue.COMPLEX_UNIT_SP, 14f)
 

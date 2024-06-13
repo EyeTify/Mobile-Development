@@ -3,7 +3,11 @@ package com.bangkit.eyetify.ui.fragment
 import android.app.Dialog
 import android.content.Context
 import android.content.Context.MODE_PRIVATE
+import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.provider.Settings
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -51,12 +55,16 @@ class ProfileFragment : Fragment() {
 
         displayProfile()
 
+        binding.profileCardMyprofile.setOnClickListener{
+            showPopup()
+        }
+
         binding.profileCardRating.setOnClickListener{
             showPopup()
         }
 
-        binding.profileCardMyprofile.setOnClickListener{
-            showPopup()
+        binding.profileCardLanguange.setOnClickListener{
+            startActivity(Intent(Settings.ACTION_LOCALE_SETTINGS))
         }
 
         binding.profileCardPrivacy.setOnClickListener{
@@ -88,6 +96,7 @@ class ProfileFragment : Fragment() {
     private fun showPopupLogout() {
         val dialog = Dialog(requireContext())
         dialog.setContentView(R.layout.pop_up_logout_dialog)
+        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
         val btnCancel = dialog.findViewById<Button>(R.id.btn_cancel)
         val btnLogout = dialog.findViewById<Button>(R.id.btn_logout)

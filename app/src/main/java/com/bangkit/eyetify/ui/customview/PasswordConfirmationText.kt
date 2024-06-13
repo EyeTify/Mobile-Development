@@ -16,7 +16,7 @@ class PasswordConfirmationText @JvmOverloads constructor(
 
     private var passwordToMatch: String? = null
     init {
-        hint = "Confirmation your password"
+        hint = context.getString(R.string.confirm_your_password)
         textAlignment = View.TEXT_ALIGNMENT_VIEW_START
         setTextSize(TypedValue.COMPLEX_UNIT_SP, 14f)
 

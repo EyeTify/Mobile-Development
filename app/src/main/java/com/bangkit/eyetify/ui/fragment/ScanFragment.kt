@@ -2,6 +2,8 @@ package com.bangkit.eyetify.ui.fragment
 
 import android.app.Dialog
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
@@ -76,6 +78,7 @@ class ScanFragment : Fragment() {
         val dialog = Dialog(requireContext())
         dialog.setCancelable(true)
         dialog.setContentView(R.layout.pop_up_action_dialog)
+        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         dialog.show()
 
         val btnCamera = dialog.findViewById<Button>(R.id.camera_btn)

@@ -15,7 +15,7 @@ class EmailEditText @JvmOverloads constructor(
 ) : AppCompatEditText(context, attrs, defStyleAttr) {
 
     init {
-        hint = "Enter your Email or Phone Number"
+        hint = context.getString(R.string.enter_your_email)
         textAlignment = View.TEXT_ALIGNMENT_VIEW_START
         setTextSize(TypedValue.COMPLEX_UNIT_SP, 14f)
 

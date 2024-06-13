@@ -7,13 +7,14 @@ import android.util.AttributeSet
 import android.util.TypedValue
 import android.view.View
 import androidx.appcompat.widget.AppCompatEditText
+import com.bangkit.eyetify.R
 
 class NameEditText @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = androidx.appcompat.R.attr.editTextStyle
 ) : AppCompatEditText(context, attrs, defStyleAttr) {
 
     init {
-        hint = "Enter your Username"
+        hint = context.getString(R.string.enter_your_username)
         textAlignment = View.TEXT_ALIGNMENT_VIEW_START
         setTextSize(TypedValue.COMPLEX_UNIT_SP, 14f)
 
