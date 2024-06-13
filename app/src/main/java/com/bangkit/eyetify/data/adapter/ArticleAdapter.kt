@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bangkit.eyetify.data.response.NewsResponseItem
 import com.bangkit.eyetify.data.utils.DateFormatter
 import com.bangkit.eyetify.databinding.ItemNewsBinding
+import com.bangkit.eyetify.ui.fragment.article.DetailArticleActivity
 import com.bumptech.glide.Glide
 
 class ArticleAdapter : ListAdapter<NewsResponseItem, ArticleAdapter.MyViewHolder>(DIFF_CALLBACK) {
@@ -33,9 +34,10 @@ class ArticleAdapter : ListAdapter<NewsResponseItem, ArticleAdapter.MyViewHolder
             binding.tvItemPublishedDate.text = DateFormatter.formatDate(currentItem.publishedAt.toString())
 
             itemView.setOnClickListener {
-                val intent = Intent(Intent.ACTION_VIEW)
-                intent.data = Uri.parse(currentItem.url)
-                itemView.context.startActivity(intent)
+                val context = itemView.context
+                val intent = Intent(context, DetailArticleActivity::class.java)
+                intent.putExtra(DetailArticleActivity.EXTRA_URL, currentItem.url)
+                context.startActivity(intent)
             }
         }
     }
