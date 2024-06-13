@@ -16,6 +16,7 @@ import com.bangkit.eyetify.ui.viewmodel.factory.AuthViewModelFactory
 import com.bangkit.eyetify.ui.viewmodel.model.LoginViewModel
 import com.bangkit.eyetify.ui.viewmodel.model.MainViewModel
 import com.bangkit.eyetify.ui.viewmodel.model.RegisterViewModel
+import com.bumptech.glide.Glide
 
 class ProfileFragment : Fragment() {
     private var _binding: FragmentProfileBinding? = null
@@ -113,9 +114,15 @@ class ProfileFragment : Fragment() {
         return sharedPreferences.getString("email", null)
     }
 
+    private fun loadImage(): String?{
+        val sharedPreferences = requireActivity().getSharedPreferences("user_prefs", Context.MODE_PRIVATE)
+        return sharedPreferences.getString("image", null)
+    }
+
     private fun displayProfile() {
         val username = loadUsername()
         val email = loadEmail()
+        val image = loadImage()
 
         if (username != null) {
             binding.nameProfile.text = username
@@ -127,6 +134,12 @@ class ProfileFragment : Fragment() {
             binding.emailProfile.text = email
         } else {
             binding.emailProfile.text = getString(R.string.email_not_found)
+        }
+
+        if (image != null) {
+            Glide.with(this).load(image).circleCrop().into(binding.imageProfile)
+        } else {
+            binding.imageProfile.setImageResource(R.drawable.placeholder)
         }
     }
 

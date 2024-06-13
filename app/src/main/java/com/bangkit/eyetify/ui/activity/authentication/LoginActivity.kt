@@ -59,8 +59,9 @@ class LoginActivity : AppCompatActivity() {
                 is Result.DataSuccess -> {
                     val name = result.data.loginResult.name
                     val token = result.data.loginResult.token
-                    viewModel.saveSession(UserModel(email, token))
-                    saveUserInfo(name, email)
+                    val image = result.data.loginResult.photoURL
+                    viewModel.saveSession(UserModel(email, token, image))
+                    saveUserInfo(name, email, image)
                     AlertDialog.Builder(this).apply {
                         setTitle("Yeah!")
                         setMessage("$name sudah Sudah Berhasil Login Nih. Yuk, login dan belajar coding.")
@@ -97,11 +98,12 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun saveUserInfo(name: String, email: String) {
+    private fun saveUserInfo(name: String, email: String, image: String) {
         val sharedPreferences = getSharedPreferences("user_prefs", MODE_PRIVATE)
         val editor = sharedPreferences.edit()
         editor.putString("username", name)
         editor.putString("email", email)
+        editor.putString("image", image )
         editor.apply()
     }
 

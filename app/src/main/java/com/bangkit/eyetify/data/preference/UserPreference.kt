@@ -20,6 +20,7 @@ class UserPreference private constructor(private val dataStore: DataStore<Prefer
             preferences[EMAIL_KEY] = userModel.email
             preferences[TOKEN_KEY] = userModel.token
             preferences[IS_LOGIN_KEY] = true
+            preferences[IMAGE] = userModel.image
         }
     }
 
@@ -28,6 +29,7 @@ class UserPreference private constructor(private val dataStore: DataStore<Prefer
             preferences.remove(IS_LOGIN_KEY)
             preferences.remove(TOKEN_KEY)
             preferences.remove(NAME)
+            preferences.remove(IMAGE)
         }
     }
 
@@ -36,7 +38,10 @@ class UserPreference private constructor(private val dataStore: DataStore<Prefer
             UserModel(
                 preferences[EMAIL_KEY] ?: "",
                 preferences[TOKEN_KEY] ?: "",
-                preferences[IS_LOGIN_KEY] ?: false
+                preferences[IMAGE] ?: "",
+                preferences[IS_LOGIN_KEY] ?: false,
+
+
             )
         }
     }
@@ -57,6 +62,7 @@ class UserPreference private constructor(private val dataStore: DataStore<Prefer
         private val TOKEN_KEY = stringPreferencesKey("token")
         private val IS_LOGIN_KEY = booleanPreferencesKey("isLogin")
         private val NAME = stringPreferencesKey("name")
+        private val IMAGE = stringPreferencesKey("image")
 
     }
 }
