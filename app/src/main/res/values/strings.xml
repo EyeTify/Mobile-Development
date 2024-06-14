@@ -79,6 +79,7 @@
     <string name="confirm_your_password">Confirm your password</string>
     <string name="enter_your_password">Enter your password</string>
     <string name="language">Bahasa</string>
+    <string name="about_eyetify">Eyetify is an application that facilitates early detection of eye diseases through the use of gallery and camera for everyone.</string>
 
     <string-array name="data_name">
         <item>Cataract</item>

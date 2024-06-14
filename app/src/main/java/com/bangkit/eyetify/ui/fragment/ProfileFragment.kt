@@ -56,7 +56,7 @@ class ProfileFragment : Fragment() {
         displayProfile()
 
         binding.profileCardAbout.setOnClickListener{
-            showPopup()
+            showPopupAbout()
         }
 
         binding.profileCardLanguange.setOnClickListener{
@@ -87,6 +87,21 @@ class ProfileFragment : Fragment() {
         btnClose.setOnClickListener {
             dialog.dismiss()
         }
+    }
+
+    private fun showPopupAbout() {
+        val dialog = Dialog(requireContext())
+        dialog.setCancelable(true)
+        dialog.setContentView(R.layout.pop_up_about_dialog)
+        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+        val btnClose = dialog.findViewById<View>(R.id.button_close)
+
+        btnClose.setOnClickListener {
+            dialog.dismiss()
+        }
+
+        dialog.show()
     }
 
     private fun showPopupLogout() {
