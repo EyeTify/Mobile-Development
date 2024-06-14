@@ -1,7 +1,7 @@
 package com.bangkit.eyetify.data.injection
 
 import com.bangkit.eyetify.data.repository.ArticleRepository
-import com.bangkit.eyetify.data.retrofit.article.ArticleConfig
+import com.bangkit.eyetify.data.retrofit.ArticleConfig
 
 object ArticleInjection {
     fun provideRepository(): ArticleRepository {

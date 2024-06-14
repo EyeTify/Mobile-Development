@@ -1,8 +1,7 @@
-package com.bangkit.eyetify.ui.fragment
+package com.bangkit.eyetify.ui.fragment.profile
 
 import android.app.Dialog
 import android.content.Context
-import android.content.Context.MODE_PRIVATE
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
@@ -19,7 +18,6 @@ import com.bangkit.eyetify.databinding.FragmentProfileBinding
 import com.bangkit.eyetify.ui.viewmodel.factory.AuthViewModelFactory
 import com.bangkit.eyetify.ui.viewmodel.model.LoginViewModel
 import com.bangkit.eyetify.ui.viewmodel.model.MainViewModel
-import com.bangkit.eyetify.ui.viewmodel.model.RegisterViewModel
 import com.bumptech.glide.Glide
 
 class ProfileFragment : Fragment() {
@@ -63,13 +61,14 @@ class ProfileFragment : Fragment() {
             startActivity(Intent(Settings.ACTION_LOCALE_SETTINGS))
         }
 
-        binding.profileCardPrivacy.setOnClickListener{
-            showPopup()
-        }
-
         binding.profileCardRequirement.setOnClickListener{
             showPopup()
         }
+
+        binding.profileCardPrivacy.setOnClickListener{
+            startActivity(Intent(requireContext(), PolicyActivity::class.java))
+        }
+
 
         binding.cardLogout.setOnClickListener{
             showPopupLogout()

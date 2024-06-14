@@ -80,6 +80,7 @@
     <string name="enter_your_password">Enter your password</string>
     <string name="language">Bahasa</string>
     <string name="about_eyetify">Eyetify is an application that facilitates early detection of eye diseases through the use of gallery and camera for everyone.</string>
+    <string name="about_msg">Selamat datang di Eyetify! Kami berkomitmen untuk melindungi privasi Anda. Kebijakan Privasi ini menjelaskan bagaimana kami mengumpulkan, menggunakan, dan melindungi informasi pribadi Anda saat Anda menggunakan aplikasi Eyetify. Kami merevisi Kebijakan Privasi ini secara berkala untuk memastikan bahwa kami selalu mematuhi peraturan perlindungan data yang berlaku.</string>
 
     <string-array name="data_name">
         <item>Cataract</item>

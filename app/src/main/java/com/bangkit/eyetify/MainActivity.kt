@@ -5,7 +5,6 @@ import android.os.Build
 import android.os.Bundle
 import android.view.WindowInsets
 import android.view.WindowManager
-import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -13,7 +12,7 @@ import com.bangkit.eyetify.databinding.ActivityMainBinding
 import com.bangkit.eyetify.ui.activity.WelcomeActivity
 import com.bangkit.eyetify.ui.fragment.HistoryFragment
 import com.bangkit.eyetify.ui.fragment.HomeFragment
-import com.bangkit.eyetify.ui.fragment.ProfileFragment
+import com.bangkit.eyetify.ui.fragment.profile.ProfileFragment
 import com.bangkit.eyetify.ui.fragment.ScanFragment
 import com.bangkit.eyetify.ui.fragment.article.ArticleFragment
 import com.bangkit.eyetify.ui.viewmodel.factory.AuthViewModelFactory

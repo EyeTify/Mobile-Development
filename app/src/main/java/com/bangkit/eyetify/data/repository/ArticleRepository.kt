@@ -2,7 +2,7 @@ package com.bangkit.eyetify.data.repository
 
 import com.bangkit.eyetify.data.preference.Result
 import com.bangkit.eyetify.data.response.NewsResponseItem
-import com.bangkit.eyetify.data.retrofit.article.ArticleService
+import com.bangkit.eyetify.data.retrofit.ArticleService
 import retrofit2.HttpException
 
 class ArticleRepository(

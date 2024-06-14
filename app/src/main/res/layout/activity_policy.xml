@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_purple">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/button_back"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button_back_background"
+            android:src="@drawable/ic_arrow_back"
+            android:layout_marginTop="32dp"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/title_about"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/button_back"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/button_back"
+            android:text="Kebijakan Privasi"
+            android:fontFamily="@font/bold"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            />
+
+        <TextView
+            android:id="@+id/tv_about_msg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:justificationMode="inter_word"
+            android:layout_marginTop="16dp"
+            android:layout_marginHorizontal="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/button_back"
+            android:textSize="12sp"
+            android:text="@string/about_msg"/>
+
+        <TextView
+            android:id="@+id/title_about1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_about_msg"
+            android:text="Informasi yang Kami Kumpulkan"
+            android:fontFamily="@font/semibold"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="8dp"
+
+            />
+
+        <TextView
+            android:id="@+id/tv_about1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:justificationMode="inter_word"
+            android:layout_marginHorizontal="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_about1"
+            android:textSize="12sp"
+            android:text="Kami dapat mengumpulkan informasi pribadi seperti nama, alamat email, dan informasi kontak lainnya saat Anda mendaftar atau menggunakan layanan kami. Kami juga dapat mengumpulkan informasi non-pribadi yang bersifat teknis, seperti jenis perangkat Anda dan statistik penggunaan aplikasi."
+            />
+
+        <TextView
+            android:id="@+id/title_about2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_about1"
+            android:text="Bagaimana Kami Menggunakan Informasi Anda"
+            android:fontFamily="@font/semibold"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="8dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_about2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:justificationMode="inter_word"
+            android:layout_marginHorizontal="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_about2"
+            android:textSize="12sp"
+            android:text="Informasi yang kami kumpulkan digunakan untuk menyediakan layanan kami, memahami kebutuhan dan preferensi Anda, meningkatkan produk dan layanan kami, serta untuk tujuan kepatuhan hukum."
+            />
+
+        <TextView
+            android:id="@+id/title_about3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_about2"
+            android:text="Perlindungan Data Anda"
+            android:fontFamily="@font/semibold"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="8dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_about3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:justificationMode="inter_word"
+            android:layout_marginHorizontal="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_about3"
+            android:textSize="12sp"
+            android:text="Kami mengambil langkah-langkah keamanan yang sesuai untuk melindungi informasi pribadi Anda dari akses yang tidak sah, penggunaan yang tidak sah, modifikasi, dan pengungkapan yang tidak sah."
+            />
+
+        <TextView
+            android:id="@+id/title_about4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_about3"
+            android:text="Kontak Kami"
+            android:fontFamily="@font/semibold"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="8dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_about4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:justificationMode="inter_word"
+            android:layout_marginHorizontal="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_about4"
+            android:textSize="12sp"
+            android:text="Jika Anda memiliki pertanyaan atau masalah terkait Kebijakan Privasi kami, silakan hubungi kami di [email atau nomor kontak] di bawah ini."
+            />
+
+        <ImageView
+            android:id="@+id/image_email"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/contact_email"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_about4"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="100dp"
+            android:onClick="sendEmail"
+            />
+
+        <ImageView
+            android:id="@+id/image_contact"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/contact_phone"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_about4"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="100dp"
+            android:onClick="openContacts"
+            />
+
+        <TextView
+            android:id="@+id/text_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            app:layout_constraintTop_toBottomOf="@id/image_email"
+            app:layout_constraintStart_toStartOf="@id/image_email"
+            app:layout_constraintEnd_toEndOf="@id/image_email"
+            android:layout_marginTop="1dp"
+            />
+
+        <TextView
+            android:id="@+id/text_contact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phone"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            app:layout_constraintTop_toBottomOf="@id/image_contact"
+            app:layout_constraintStart_toStartOf="@id/image_contact"
+            app:layout_constraintEnd_toEndOf="@id/image_contact"
+            android:layout_marginTop="1dp"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

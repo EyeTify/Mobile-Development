@@ -1,4 +1,4 @@
-package com.bangkit.eyetify.data.retrofit.article
+package com.bangkit.eyetify.data.retrofit
 
 import com.bangkit.eyetify.data.response.NewsResponseItem
 import retrofit2.http.GET

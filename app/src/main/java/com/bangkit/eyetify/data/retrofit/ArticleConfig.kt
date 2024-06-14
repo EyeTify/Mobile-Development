@@ -1,4 +1,4 @@
-package com.bangkit.eyetify.data.retrofit.article
+package com.bangkit.eyetify.data.retrofit
 
 import com.bangkit.eyetify.BuildConfig
 import okhttp3.OkHttpClient
