@@ -7,13 +7,13 @@
     <string name="title_signup_page">Create Account</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
-    <string name="message_login_page">Start learning with login your account</string>
+    <string name="message_login_page">Start using by logging into your account</string>
     <string name="title_login_page">Login Account</string>
     <string name="name">Username</string>
     <string name="message_main_page">Selamat Belajar di Dicoding.</string>
     <string name="greeting">Halo %1$s,</string>
     <string name="logout">Keluar</string>
-    <string name="message_signup_page">Start learning with create your account</string>
+    <string name="message_signup_page">Get started with creating your account on Eyetify</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="invalid_email">Email tidak valid</string>
     <string name="error_password_too_short">Password tidak boleh kurang dari 8 karakter!</string>

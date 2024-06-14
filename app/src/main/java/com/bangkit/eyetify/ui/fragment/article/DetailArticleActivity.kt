@@ -22,14 +22,14 @@ class DetailArticleActivity : AppCompatActivity() {
         binding = ActivityDetailArticleBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setupWebView()
+        loadUrlFromIntent()
+    }
+
+    @SuppressLint("SetJavaScriptEnabled")
+    private fun setupWebView() {
         val webView = binding.webView
         webView.settings.javaScriptEnabled = true
-
-        // Ambil URL dari Intent dan muat ke WebView
-        val url = intent.getStringExtra(EXTRA_URL)
-        if (url != null) {
-            webView.loadUrl(url)
-        }
 
         webView.webViewClient = object : WebViewClient() {
             override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
@@ -42,6 +42,16 @@ class DetailArticleActivity : AppCompatActivity() {
         }
     }
 
+    private fun loadUrlFromIntent() {
+        val url = intent.getStringExtra(EXTRA_URL)
+        url?.let {
+            binding.webView.loadUrl(it)
+        } ?: run {
+            // Handle the case where URL is not provided
+            binding.progressBar.visibility = View.GONE
+            // Optionally show an error message or finish the activity
+        }
+    }
     companion object {
         const val EXTRA_URL = "extra_url"
     }
