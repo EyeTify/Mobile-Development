@@ -80,7 +80,31 @@
     <string name="enter_your_password">Enter your password</string>
     <string name="language">Bahasa</string>
     <string name="about_eyetify">Eyetify is an application that facilitates early detection of eye diseases through the use of gallery and camera for everyone.</string>
-    <string name="about_msg">Selamat datang di Eyetify! Kami berkomitmen untuk melindungi privasi Anda. Kebijakan Privasi ini menjelaskan bagaimana kami mengumpulkan, menggunakan, dan melindungi informasi pribadi Anda saat Anda menggunakan aplikasi Eyetify. Kami merevisi Kebijakan Privasi ini secara berkala untuk memastikan bahwa kami selalu mematuhi peraturan perlindungan data yang berlaku.</string>
+    <string name="privacy_msg">Selamat datang di Eyetify! Kami berkomitmen untuk melindungi privasi Anda. Kebijakan Privasi ini menjelaskan bagaimana kami mengumpulkan, menggunakan, dan melindungi informasi pribadi Anda saat Anda menggunakan aplikasi Eyetify. Kami merevisi Kebijakan Privasi ini secara berkala untuk memastikan bahwa kami selalu mematuhi peraturan perlindungan data yang berlaku.</string>
+    <string name="title_privacy">Kebijakan Privasi</string>
+    <string name="title_privacy1">Informasi yang Kami Kumpulkan</string>
+    <string name="title_privacy2">Bagaimana Kami Menggunakan Informasi Anda</string>
+    <string name="title_privacy3">Perlindungan Data Anda</string>
+    <string name="title_privacy4">Kontak Kami</string>
+    <string name="text_privacy1">Kami dapat mengumpulkan informasi pribadi seperti nama, alamat email, dan informasi kontak lainnya saat Anda mendaftar atau menggunakan layanan kami. Kami juga dapat mengumpulkan informasi non-pribadi yang bersifat teknis, seperti jenis perangkat Anda dan statistik penggunaan aplikasi.</string>
+    <string name="text_privacy2">Informasi yang kami kumpulkan digunakan untuk menyediakan layanan kami, memahami kebutuhan dan preferensi Anda, meningkatkan produk dan layanan kami, serta untuk tujuan kepatuhan hukum.</string>
+    <string name="text_privacy3">Kami mengambil langkah-langkah keamanan yang sesuai untuk melindungi informasi pribadi Anda dari akses yang tidak sah, penggunaan yang tidak sah, modifikasi, dan pengungkapan yang tidak sah.</string>
+    <string name="text_privacy4">Jika Anda memiliki pertanyaan atau masalah terkait Kebijakan Privasi kami, silakan hubungi kami di [email atau nomor kontak] di bawah ini.</string>
+    <string name="title_requirement">Syarat dan Ketentuan</string>
+    <string name="requirement_msg">Selamat datang di Eyetify! Harap perhatikan syarat dan ketentuan penggunaan aplikasi ini dengan seksama sebelum Anda menggunakan layanan kami.g</string>
+    <string name="title_requirement1">1. Penerimaan Syarat dan Ketentuan</string>
+    <string name="title_requirement2">2. Layanan</string>
+    <string name="title_requirement3">3. Kebijakan Privasi</string>
+    <string name="title_requirement4">4. Ketentuan Penggunaan</string>
+    <string name="title_requirement5">5. Perubahan Syarat dan Ketentuan</string>
+    <string name="title_requirement6">6. Pertanyaan dan Hubungan</string>
+    <string name="text_requirement1">1.1. Dengan mengunduh, menginstal, atau menggunakan aplikasi Eyetify ini, Anda dianggap telah membaca, memahami, dan menyetujui syarat dan ketentuan ini.\n1.2. Jika Anda tidak menyetujui syarat dan ketentuan ini, Anda tidak diperbolehkan menggunakan aplikasi Eyetify.</string>
+    <string name="text_requirement2">2.1. Eyetify menyediakan layanan untuk mencari dan menyimpan gambar berdasarkan pengenalan visual.\n2.2. Kami berhak untuk memodifikasi, menangguhkan, atau menghentikan layanan kami tanpa pemberitahuan sebelumnya.</string>
+    <string name="text_requirement3">3.1. Informasi pribadi yang Anda berikan kepada kami akan dikelola sesuai dengan kebijakan privasi kami.\n3.2. Kami tidak bertanggung jawab atas penggunaan data yang Anda berikan kepada pihak ketiga.</string>
+    <string name="text_requirement4">4.1. Anda bertanggung jawab atas penggunaan aplikasi Eyetify ini dan mematuhi semua hukum yang berlaku.\n4.2. Penggunaan aplikasi ini harus sesuai dengan pedoman dan etika yang berlaku.</string>
+    <string name="text_requirement5">5.1. Kami dapat mengubah syarat dan ketentuan ini dari waktu ke waktu tanpa pemberitahuan sebelumnya.\n5.2. Perubahan akan efektif setelah kami memperbarui syarat dan ketentuan di dalam aplikasi.</string>
+    <string name="text_requirement6">6.1. Jika Anda memiliki pertanyaan atau komentar tentang syarat dan ketentuan ini, silakan hubungi kami di bawah ini.</string>
+    <string name="phone">Phone</string>
 
     <string-array name="data_name">
         <item>Cataract</item>

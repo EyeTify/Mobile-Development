@@ -62,13 +62,12 @@ class ProfileFragment : Fragment() {
         }
 
         binding.profileCardRequirement.setOnClickListener{
-            showPopup()
+            startActivity(Intent(requireContext(), RequirementActivity::class.java))
         }
 
         binding.profileCardPrivacy.setOnClickListener{
-            startActivity(Intent(requireContext(), PolicyActivity::class.java))
+            startActivity(Intent(requireContext(), PrivacyActivity::class.java))
         }
-
 
         binding.cardLogout.setOnClickListener{
             showPopupLogout()

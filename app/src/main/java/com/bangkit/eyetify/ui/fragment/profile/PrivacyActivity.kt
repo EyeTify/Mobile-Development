@@ -4,19 +4,15 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.bangkit.eyetify.R
-import com.bangkit.eyetify.databinding.ActivityPolicyBinding
+import com.bangkit.eyetify.databinding.ActivityPrivacyBinding
 
-class PolicyActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityPolicyBinding
+class PrivacyActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityPrivacyBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityPolicyBinding.inflate(layoutInflater)
+        binding = ActivityPrivacyBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.buttonBack.setOnClickListener {

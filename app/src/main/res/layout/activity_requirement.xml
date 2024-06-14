@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_purple">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/button_back"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button_back_background"
+            android:src="@drawable/ic_arrow_back"
+            android:layout_marginTop="32dp"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/title_requirement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/button_back"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/button_back"
+            android:text="@string/title_requirement"
+            android:fontFamily="@font/bold"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            />
+
+        <TextView
+            android:id="@+id/tv_requirement_msg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:justificationMode="inter_word"
+            android:layout_marginTop="16dp"
+            android:layout_marginHorizontal="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/button_back"
+            android:textSize="12sp"
+            android:text="@string/requirement_msg"/>
+
+        <TextView
+            android:id="@+id/title_requirement1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_requirement_msg"
+            android:text="@string/title_requirement1"
+            android:fontFamily="@font/semibold"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="8dp"
+
+            />
+
+        <TextView
+            android:id="@+id/tv_requirement1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:justificationMode="inter_word"
+            android:layout_marginHorizontal="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_requirement1"
+            android:textSize="12sp"
+            android:text="@string/text_requirement1"
+            />
+
+        <TextView
+            android:id="@+id/title_requirement2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_requirement1"
+            android:text="@string/title_requirement2"
+            android:fontFamily="@font/semibold"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="8dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_requirement2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:justificationMode="inter_word"
+            android:layout_marginHorizontal="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_requirement2"
+            android:textSize="12sp"
+            android:text="@string/text_requirement2"
+            />
+
+        <TextView
+            android:id="@+id/title_requirement3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_requirement2"
+            android:text="@string/title_requirement3"
+            android:fontFamily="@font/semibold"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="8dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_requirement3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:justificationMode="inter_word"
+            android:layout_marginHorizontal="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_requirement3"
+            android:textSize="12sp"
+            android:text="@string/text_requirement3"
+            />
+
+        <TextView
+            android:id="@+id/title_requirement4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_requirement3"
+            android:text="@string/title_requirement4"
+            android:fontFamily="@font/semibold"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="8dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_requirement4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:justificationMode="inter_word"
+            android:layout_marginHorizontal="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_requirement4"
+            android:textSize="12sp"
+            android:text="@string/text_requirement4"
+            />
+
+        <TextView
+            android:id="@+id/title_requirement5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_requirement4"
+            android:text="@string/title_requirement5"
+            android:fontFamily="@font/semibold"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="8dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_requirement5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:justificationMode="inter_word"
+            android:layout_marginHorizontal="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_requirement5"
+            android:textSize="12sp"
+            android:text="@string/text_requirement5"
+            />
+
+        <TextView
+            android:id="@+id/title_requirement6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_requirement5"
+            android:text="@string/title_requirement6"
+            android:fontFamily="@font/semibold"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="8dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_requirement6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:justificationMode="inter_word"
+            android:layout_marginHorizontal="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_requirement6"
+            android:textSize="12sp"
+            android:text="@string/text_requirement6"
+            />
+
+        <ImageView
+            android:id="@+id/image_email"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/contact_email"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_requirement6"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="100dp"
+            android:onClick="sendEmail"
+            />
+
+        <ImageView
+            android:id="@+id/image_contact"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/contact_phone"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_requirement6"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="100dp"
+            android:onClick="openContacts"
+            />
+
+        <TextView
+            android:id="@+id/text_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/email"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            app:layout_constraintTop_toBottomOf="@id/image_email"
+            app:layout_constraintStart_toStartOf="@id/image_email"
+            app:layout_constraintEnd_toEndOf="@id/image_email"
+            android:layout_marginTop="1dp"
+            />
+
+        <TextView
+            android:id="@+id/text_contact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/phone"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            app:layout_constraintTop_toBottomOf="@id/image_contact"
+            app:layout_constraintStart_toStartOf="@id/image_contact"
+            app:layout_constraintEnd_toEndOf="@id/image_contact"
+            android:layout_marginTop="1dp"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
