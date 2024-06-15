@@ -8,6 +8,7 @@ import android.view.WindowManager
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.commit
 import com.bangkit.eyetify.databinding.ActivityMainBinding
 import com.bangkit.eyetify.ui.activity.WelcomeActivity
 import com.bangkit.eyetify.ui.fragment.HistoryFragment
@@ -47,6 +48,10 @@ class MainActivity : AppCompatActivity() {
             openFragmentArticle()
         }
 
+        if (intent.getBooleanExtra("navigateToHistory", false)) {
+            navigateToHistoryFragment()
+        }
+
         binding.navigateMenu.setOnItemSelectedListener {
             when(it.itemId){
                 R.id.action_home -> switchFragment(HomeFragment())
@@ -62,6 +67,13 @@ class MainActivity : AppCompatActivity() {
             true
         }
 
+    }
+
+    private fun navigateToHistoryFragment() {
+        supportFragmentManager.commit {
+            replace(R.id.container_fragment, HistoryFragment())
+            addToBackStack(null)
+        }
     }
 
     private fun switchFragment(fragment: Fragment){

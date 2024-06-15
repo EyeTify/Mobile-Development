@@ -5,14 +5,25 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.bangkit.eyetify.R
+import com.bangkit.eyetify.data.adapter.ResultSavedAdapter
+import com.bangkit.eyetify.data.room.AppDatabase
 import com.bangkit.eyetify.databinding.FragmentHistoryBinding
+import com.bangkit.eyetify.ui.viewmodel.factory.ResultViewModelFactory
+import com.bangkit.eyetify.ui.viewmodel.model.HistoryViewModel
 import com.justin.popupbarchart.GraphValue
 
 class HistoryFragment : Fragment() {
 
     private var _binding: FragmentHistoryBinding? = null
     private val binding get() = _binding!!
+
+    private val viewModel by viewModels<HistoryViewModel> {
+        ResultViewModelFactory.getInstance(requireContext())
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +36,8 @@ class HistoryFragment : Fragment() {
     ): View? {
         _binding = FragmentHistoryBinding.inflate(inflater, container, false)
         return binding.root
+
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -42,6 +55,14 @@ class HistoryFragment : Fragment() {
                 GraphValue(day = 7, id = 7, progress = 25, isToday = false, showToolTip = false)
             )
         )
+
+        viewModel.getAllSavedResult().observe(viewLifecycleOwner){
+            if (it != null) {
+                binding.rvHistory.layoutManager = LinearLayoutManager(requireContext())
+                val adapter = ResultSavedAdapter(it)
+                binding.rvHistory.adapter = adapter
+            }
+        }
     }
 
     override fun onDestroyView() {

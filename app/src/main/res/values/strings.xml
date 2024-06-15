@@ -105,6 +105,7 @@
     <string name="text_requirement5">5.1. Kami dapat mengubah syarat dan ketentuan ini dari waktu ke waktu tanpa pemberitahuan sebelumnya.\n5.2. Perubahan akan efektif setelah kami memperbarui syarat dan ketentuan di dalam aplikasi.</string>
     <string name="text_requirement6">6.1. Jika Anda memiliki pertanyaan atau komentar tentang syarat dan ketentuan ini, silakan hubungi kami di bawah ini.</string>
     <string name="phone">Phone</string>
+    <string name="desc_welcome">See The World in all its clarity</string>
 
     <string-array name="data_name">
         <item>Cataract</item>

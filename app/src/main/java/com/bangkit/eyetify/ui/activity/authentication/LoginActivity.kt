@@ -64,7 +64,7 @@ class LoginActivity : AppCompatActivity() {
                     saveUserInfo(name, email, image)
                     AlertDialog.Builder(this).apply {
                         setTitle("Yeah!")
-                        setMessage("$name sudah Sudah Berhasil Login Nih. Yuk, login dan belajar coding.")
+                        setMessage("$name sudah Sudah Berhasil Login Nih. Yuk, login dan jaga kesehatan matamu.")
                         setPositiveButton("Lanjut") { _, _ ->
                             finish()
                             val intent = Intent(this@LoginActivity, MainActivity::class.java)
