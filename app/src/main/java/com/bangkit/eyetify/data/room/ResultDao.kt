@@ -13,4 +13,6 @@ interface ResultDao {
 
     @Query("SELECT * FROM results")
     fun getAllResults(): LiveData<List<ResultEntity>>
+
+
 }

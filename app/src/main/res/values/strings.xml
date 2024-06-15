@@ -106,6 +106,7 @@
     <string name="text_requirement6">6.1. Jika Anda memiliki pertanyaan atau komentar tentang syarat dan ketentuan ini, silakan hubungi kami di bawah ini.</string>
     <string name="phone">Phone</string>
     <string name="desc_welcome">See The World in all its clarity</string>
+    <string name="suggestion">Sugesstion</string>
 
     <string-array name="data_name">
         <item>Cataract</item>

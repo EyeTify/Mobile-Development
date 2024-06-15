@@ -174,7 +174,6 @@ class ScanFragment : Fragment() {
                     val response = apiService.uploadImage(multipartBody)
 
                     response.data?.let { data ->
-                        // Tampilkan hasil
                         binding.textTitleUpload.text = run {
                             data.result?.let { showToast(it) }
                             data.result

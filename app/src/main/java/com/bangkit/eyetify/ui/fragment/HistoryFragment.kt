@@ -11,7 +11,9 @@ import com.bangkit.eyetify.R
 import com.bangkit.eyetify.data.adapter.ResultSavedAdapter
 import com.bangkit.eyetify.data.room.AppDatabase
 import com.bangkit.eyetify.databinding.FragmentHistoryBinding
+import com.bangkit.eyetify.ui.viewmodel.factory.ArticleViewModelFactory
 import com.bangkit.eyetify.ui.viewmodel.factory.ResultViewModelFactory
+import com.bangkit.eyetify.ui.viewmodel.model.ArticleViewModel
 import com.bangkit.eyetify.ui.viewmodel.model.HistoryViewModel
 import com.justin.popupbarchart.GraphValue
 
