@@ -7,6 +7,7 @@ import android.view.WindowInsets
 import android.view.WindowManager
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import com.bangkit.eyetify.databinding.ActivityMainBinding
@@ -18,6 +19,10 @@ import com.bangkit.eyetify.ui.fragment.ScanFragment
 import com.bangkit.eyetify.ui.fragment.article.ArticleFragment
 import com.bangkit.eyetify.ui.viewmodel.factory.AuthViewModelFactory
 import com.bangkit.eyetify.ui.viewmodel.model.MainViewModel
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
@@ -31,6 +36,12 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        installSplashScreen()
+        CoroutineScope(Dispatchers.Main).launch {
+            delay(1500) // Delay for 1500 milliseconds
+        }
+
         setContentView(binding.root)
 
         viewModel.getSession().observe(this) { user ->

@@ -87,15 +87,11 @@ dependencies {
     ksp(libs.androidx.room.compiler)
 
     implementation (libs.glide)
-    implementation ("de.hdodenhof:circleimageview:3.1.0")
-
-//    todo : Import Custom Progress Bar 
-    implementation ("com.mikhaellopez:circularprogressbar:3.1.0")
-
-    implementation("com.github.JustinGeorgeJoseph:PopupBarChart:1.0.1")
-
-    implementation("com.facebook.shimmer:shimmer:0.5.0")
-
-    implementation("com.github.yalantis:ucrop:2.2.8")
+    implementation (libs.circleimageview)
+    implementation (libs.circularprogressbar)
+    implementation(libs.popupbarchart)
+    implementation(libs.shimmer)
+    implementation(libs.ucrop)
+    implementation(libs.androidx.core.splashscreen)
 
 }
