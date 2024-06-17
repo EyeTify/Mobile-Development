@@ -5,6 +5,8 @@
     <color name="soft_purple">#6C5DD4</color>
     <color name="placeholder">#888888</color>
     <color name="succes">#00D83A</color>
+    <color name="warning">#FB8C00</color>
+    <color name="danger">#D81B60</color>
     <color name="background_purple">#DFDAFF</color>
     <color name="blue">#3AC6FE</color>
     <color name="shimmer_color">#C2C2C2</color>
