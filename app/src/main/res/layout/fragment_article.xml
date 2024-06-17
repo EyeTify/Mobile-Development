@@ -95,7 +95,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:iconifiedByDefault="false"
-            app:queryHint="Search articles..."
+            app:queryHint="@string/search_article_hint"
             app:queryBackground="@android:color/transparent"
             app:layout_constraintTop_toBottomOf="@id/title_article"
             android:background="@android:color/transparent"

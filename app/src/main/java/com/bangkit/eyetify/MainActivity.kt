@@ -38,9 +38,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         installSplashScreen()
-        CoroutineScope(Dispatchers.Main).launch {
-            delay(1500) // Delay for 1500 milliseconds
-        }
+        Thread.sleep(3000)
 
         setContentView(binding.root)
 

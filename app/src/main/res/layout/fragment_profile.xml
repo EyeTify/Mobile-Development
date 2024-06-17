@@ -122,7 +122,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/regular"
                 android:textSize="14sp"
-                android:text="Tentang Kami"
+                android:text="@string/about_us"
                 app:layout_constraintStart_toEndOf="@id/icon_about"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toTopOf="parent"

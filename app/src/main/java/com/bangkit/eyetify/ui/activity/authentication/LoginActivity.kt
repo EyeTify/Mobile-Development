@@ -57,6 +57,7 @@ class LoginActivity : AppCompatActivity() {
                     showLoading(true)
                 }
                 is Result.DataSuccess -> {
+                    showLoading(false)
                     val name = result.data.loginResult.name
                     val token = result.data.loginResult.token
                     val image = result.data.loginResult.photoURL
@@ -66,11 +67,10 @@ class LoginActivity : AppCompatActivity() {
                         setTitle("Yeah!")
                         setMessage("$name sudah Sudah Berhasil Login Nih. Yuk, login dan jaga kesehatan matamu.")
                         setPositiveButton("Lanjut") { _, _ ->
-                            finish()
                             val intent = Intent(this@LoginActivity, MainActivity::class.java)
                             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
                             startActivity(intent)
-                            showLoading(false)
+                            finish()
                         }
                         create()
                         show()
@@ -83,11 +83,11 @@ class LoginActivity : AppCompatActivity() {
                         setTitle("Ups!")
                         setMessage("Login Gagal, Harap Periksa Kembali Email dan Password Anda.")
                         setNeutralButton("Kembali") { _, _ ->
-                            finish()
                             val intent = Intent(this@LoginActivity, LoginActivity::class.java)
                             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
                             startActivity(intent)
                             showLoading(false)
+                            finish()
                         }
                         create()
                         show()

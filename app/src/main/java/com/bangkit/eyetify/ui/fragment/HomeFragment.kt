@@ -1,6 +1,7 @@
 package com.bangkit.eyetify.ui.fragment
 
 import android.annotation.SuppressLint
+import android.app.AlertDialog
 import android.app.AppOpsManager
 import android.app.usage.UsageStatsManager
 import android.content.Context
@@ -38,7 +39,7 @@ class HomeFragment : Fragment() {
         if (checkUsageStatePermission()) {
             showUsageStats()
         } else {
-            startActivity(Intent(Settings.ACTION_USAGE_ACCESS_SETTINGS))
+            showUsageAccessDialog()
         }
     }
 
@@ -90,16 +91,29 @@ class HomeFragment : Fragment() {
 
         binding.infoResultStatusActivePhone.apply {
             if (percentage <= 60){
-                text = "Safe"
+                text = context.getString(R.string.safe)
                 setTextColor(ContextCompat.getColor(context, R.color.succes))
             }else if (percentage <= 100){
-                text = "Warning"
+                text = context.getString(R.string.warning)
                 setTextColor(ContextCompat.getColor(context, R.color.warning))
             }else{
-                text = "Danger"
+                text = context.getString(R.string.danger)
                 setTextColor(ContextCompat.getColor(context, R.color.danger))
             }
         }
+    }
+
+    private fun showUsageAccessDialog() {
+        AlertDialog.Builder(requireContext())
+            .setTitle("Izin Akses Penggunaan Diperlukan")
+            .setMessage("Aplikasi ini membutuhkan izin akses penggunaan untuk fitur durasi penggunaan ponsel Anda. Silakan berikan izin di layar berikutnya.")
+            .setPositiveButton("Berikan Izin") { dialog, which ->
+                startActivity(Intent(Settings.ACTION_USAGE_ACCESS_SETTINGS))
+            }
+            .setNegativeButton("Batal") { dialog, which ->
+                dialog.dismiss()
+            }
+            .show()
     }
 
     @SuppressLint("DefaultLocale")

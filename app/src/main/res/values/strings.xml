@@ -23,7 +23,7 @@
         <string name="akun">Account</string>
         <string name="other_method">Or using another method</string>
         <string name="sample_desc">"Lorem ipsum dolor sit amet consectetur. Ac non sed mauris \nin. Arcu lacus felis in urna turpis arcu sapien lacus "</string>
-        <string name="motto"><![CDATA[Your Health & Wellness On- \n Demand]]></string>
+        <string name="motto"><![CDATA[Your Health & Wellness On-Demand]]></string>
         <string name="button_account">Create Account</string>
         <string name="have_account">Already Have an Account</string>
         <string name="title_page_result">Result</string>
@@ -109,11 +109,18 @@
         <string name="gadget_usage_this_week">Gadget usage this week</string>
         <string name="eye_health_tips">Eye Health Tips</string>
     <string name="popular_article">Popular Article</string>
-
+    <string name="desc_welcome">See The World in all its clarity</string>
+    <string name="about_us">About Us</string>
+    <string name="logout_confirm">Are you sure you want to logout?</string>
+    <string name="search_article_hint">Search articles…</string>
+    <string name="safe">Safe</string>
+    <string name="warning">Warning</string>
+    <string name="danger">Danger</string>
+    <string name="welcome_msg">Welcome to \nEYETIFY</string>
 
     <string-array name="data_name">
         <item>Cataract</item>
-        <item>Glaukoma</item>
+        <item>Glaucoma</item>
         <item>Conjunctivitis</item>
         <item>Uveitis</item>
         <item>Hordeolum</item>
@@ -121,12 +128,12 @@
     </string-array>
 
     <string-array name="data_description">
-        <item>Katarak itu seperti efek blur filter bawaan mata, di mana lensa mata yang biasanya jernih menjadi seperti diterangi kabut, membuat pandangan menjadi tidak jelas. Biasanya ini menjadi masalah bagi orang tua, tetapi kadang-kadang juga bisa mengganggu orang muda. Oleh karena itu, penting untuk membawa mereka ke dokter mata untuk diperiksa.</item>
-        <item>Glaukoma itu kayak ninja diam-diam yang menyerang mata, tapi bedanya, dia bikin tekanan dalam mata jadi tinggi, yang bisa merusak saraf mata dan akhirnya bikin buta. Ini bisa terjadi tanpa gejala, jadi penting untuk rutin cek mata.</item>
-        <item>Konjungtivitis itu kayak tamu tak diundang yang membuat mata kamu terlihat merah, gatal, dan terasa seperti ada yang mengganjal. Ini bisa disebabkan oleh infeksi virus, bakteri, alergi, atau bahkan iritasi oleh zat tertentu.</item>
-        <item>Uveitis adalah seperti gangguan pesta di bagian tengah mata yang disebut uvea, yang terdiri dari iris, koroid, dan badan siliaris. Ini bisa disebabkan oleh infeksi, reaksi autoimun, atau trauma, dan bisa mengakibatkan peradangan yang menyakitkan dan merusak mata jika tidak diobati.</item>
-        <item>Hordeolum, yang sering disebut juga sebagai bisul mata, adalah kondisi inflamasi pada kelenjar minyak di kelopak mata. Ini umumnya disebabkan oleh infeksi bakteri, terutama oleh Staphylococcus aureus. Kondisi ini menyebabkan terbentuknya benjolan merah, nyeri, dan bengkak pada kelopak mata.</item>
-        <item>Mata menonjol, atau dikenal sebagai exophthalmos, adalah kondisi di mana bola mata secara tidak normal menonjol keluar dari rongga mata. Hal ini bisa disebabkan oleh berbagai faktor, termasuk penyakit Graves, tumor di daerah sekitar mata, atau pembengkakan jaringan di belakang mata. Kondisi ini dapat mengganggu fungsi mata dan estetika.</item>
+        <item>Cataract is like having a built-in blurry filter over your eyes, where the clear lens of the eye becomes clouded, making vision unclear. This is usually a problem for older adults but can sometimes affect younger individuals as well. Therefore, it\'s important to take them to an eye doctor for examination.</item>
+        <item>Glaucoma is like a stealth ninja attacking the eyes, but instead, it raises the pressure inside the eye, which can damage the optic nerve and eventually lead to blindness. It can occur without symptoms, so regular eye checks are important.</item>
+        <item>Conjunctivitis is like an unwelcome guest that makes your eyes appear red, itchy, and feel like there\'s something gritty in them. This can be caused by viral or bacterial infections, allergies, or irritation from certain substances.</item>
+        <item>Uveitis is like a disruption in the eye\'s middle party called the uvea, which consists of the iris, choroid, and ciliary body. It can be caused by infection, autoimmune reactions, or trauma, and can result in painful inflammation and eye damage if untreated.</item>
+        <item>Hordeolum, often called a stye, is an inflammation of the oil glands in the eyelid. It\'s typically caused by bacterial infection, especially Staphylococcus aureus. This condition causes the formation of a red, painful lump and swelling on the eyelid.</item>
+        <item>Bulging eyes, or known as exophthalmos, is a condition where the eyeball protrudes abnormally from the eye socket. This can be caused by various factors, including Graves\' disease, tumors around the eye, or swelling of tissue behind the eye. This condition can disrupt eye function and aesthetics.</item>
     </string-array>
 
     <integer-array name="data_photo">
@@ -139,31 +146,30 @@
     </integer-array>
 
     <string-array name="data_indication">
-        <item>Ketika kamu mulai merasa seperti melihat dunia melalui kaca mata buram atau ada awan-awan kecil terbang di depan mata, bisa jadi itu katarak. Selain itu, sensitivitas yang meningkat terhadap cahaya terang, serta warna yang kurang cerah, juga bisa menjadi tanda-tanda katarak.</item>
-        <item>Nah, yang tricky dari glaukoma ini, dia bisa datang tanpa kamu sadari. Tapi kalo ada gejala, kamu mungkin akan merasa nyeri di mata, penglihatan yang kabur, mata merah, dan kadang-kadang muncul cahaya berwarna pelangi saat melihat lampu terang.</item>
-        <item>Kalau kamu kena konjungtivitis, biasanya mata kamu akan terasa gatal, berair, dan merah. Kadang-kadang juga terasa seperti ada pasir di mata, dan bisa terjadi pengelupasan pada kelopak mata. Gejalanya nggak cuma di satu mata, tapi bisa di kedua mata sekaligus.</item>
-        <item>Gejalanya bisa bervariasi tergantung pada bagian mata yang terpengaruh dan seberapa parahnya, tetapi umumnya termasuk mata merah, nyeri mata, sensitivitas terhadap cahaya, penglihatan kabur, dan mungkin juga muncul "bintik-bintik buta" di bidang pandang.</item>
-        <item>Biasanya, hordeolum terlihat sebagai benjolan merah yang terasa nyeri pada kelopak mata, baik di bagian luar (hordeolum eksternal) atau di dalam kelopak mata (hordeolum internal). Benjolan ini dapat terasa hangat saat disentuh dan kadang-kadang dapat berisi nanah. Pasien juga bisa merasakan sensasi terbakar atau gatal di sekitar area yang terkena.</item>
-        <item>Gejala utama mata menonjol termasuk penonjolan mata yang terlihat jelas, perubahan pada penampilan wajah, kesulitan menutup mata sepenuhnya (lagophthalmos), dan mungkin perubahan dalam penglihatan atau sensasi tekanan pada mata. Pasien juga mungkin mengalami keringat berlebihan atau iritasi pada mata yang menonjol.</item>
+        <item>When you start feeling like you\'re looking through a cloudy lens or seeing small clouds floating in front of your eyes, it could be cataracts. Increased sensitivity to bright light and dull colors can also be signs of cataracts.</item>
+        <item>Now, the tricky part about glaucoma is that it can come without you noticing. But if there are symptoms, you may feel pain in the eyes, blurry vision, red eyes, and sometimes see rainbow-colored halos around bright lights.</item>
+        <item>If you have conjunctivitis, your eyes usually feel itchy, watery, and red. Sometimes it feels like there\'s sand in your eyes, and peeling of the eyelids may occur. The symptoms can affect both eyes simultaneously.</item>
+        <item>Symptoms can vary depending on the affected part of the eye and its severity, but typically include red eyes, eye pain, sensitivity to light, blurry vision, and possibly "blind spots" in the field of vision.</item>
+        <item>Usually, a hordeolum appears as a red lump that feels painful on the eyelid, either on the outer (external hordeolum) or inside the eyelid (internal hordeolum). The lump may feel warm to touch and sometimes contain pus. Patients may also feel burning or itching around the affected area.</item>
+        <item>Main symptoms of bulging eyes include clearly visible eye protrusion, changes in facial appearance, difficulty in fully closing the eyes (lagophthalmos), and possibly changes in vision or a sensation of pressure on the eyes. Patients may also experience excessive sweating or irritation in the bulging eyes.</item>
     </string-array>
 
     <string-array name="data_cause">
-        <item>Katarak sebenarnya adalah proses alami menua, di mana lensa mata mulai mengumpulkan protein hingga menjadi tidak jernih lagi. Namun, ada beberapa faktor risiko yang dapat meningkatkan kemungkinan seseorang mengembangkan katarak, seperti riwayat keluarga, diabetes, atau kebiasaan merokok. Oleh karena itu, penting untuk menghindari asap rokok dan menjaga kesehatan mata.</item>
-        <item>Penyebabnya biasanya karena tekanan dalam mata yang tinggi, yang bisa disebabkan oleh pemblokiran aliran cairan mata atau masalah lainnya. Faktor risiko termasuk usia tua, riwayat keluarga, dan kondisi medis seperti diabetes atau tekanan darah tinggi.</item>
-        <item>Konjungtivitis bisa disebabkan oleh virus, bakteri, alergi, atau zat iritan. Faktor risiko termasuk kontak langsung dengan orang yang terinfeksi, paparan alergen seperti serbuk sari atau bulu binatang, dan penggunaan lensa kontak tanpa kebersihan yang baik.</item>
-        <item>Uveitis bisa disebabkan oleh berbagai hal, mulai dari infeksi virus atau bakteri hingga kondisi autoimun seperti arthritis reumatoid atau penyakit Crohn. Faktor risiko termasuk riwayat penyakit autoimun atau infeksi, serta faktor genetik.</item>
-        <item>Hordeolum disebabkan oleh infeksi bakteri yang masuk ke kelenjar minyak di sekitar mata. Faktor risiko untuk mengembangkan hordeolum meliputi kebersihan yang kurang, kontak langsung dengan bakteri, penggunaan kosmetik yang berlebihan, atau kondisi medis yang melemahkan sistem kekebalan tubuh.</item>
-        <item>Mata menonjol bisa disebabkan oleh beberapa kondisi, di antaranya adalah penyakit Graves, yang merupakan penyebab umum exophthalmos. Faktor risiko lainnya termasuk riwayat keluarga dengan kondisi serupa, penyakit tiroid, atau paparan radiasi. Penggunaan obat-obatan tertentu atau kebiasaan merokok juga dapat meningkatkan risiko.</item>
+        <item>Cataracts are actually a natural aging process, where the eye\'s lens begins to accumulate proteins, causing it to become cloudy. However, there are several risk factors that can increase the likelihood of developing cataracts, such as family history, diabetes, or smoking habits. Therefore, it\'s important to avoid cigarette smoke and maintain eye health.</item>
+        <item>Glaucoma is usually caused by high pressure within the eye, which can be due to blocked fluid flow or other issues. Risk factors include old age, family history, and medical conditions such as diabetes or high blood pressure.</item>
+        <item>Conjunctivitis can be caused by viruses, bacteria, allergies, or irritants. Risk factors include direct contact with infected individuals, exposure to allergens such as pollen or animal fur, and improper hygiene in using contact lenses.</item>
+        <item>Uveitis can be caused by various factors, ranging from viral or bacterial infections to autoimmune conditions such as rheumatoid arthritis or Crohn\'s disease. Risk factors include a history of autoimmune disease or infection, as well as genetic factors.</item>
+        <item>Hordeolum is caused by bacterial infection entering the oil glands around the eye. Risk factors for developing hordeolum include poor hygiene, direct contact with bacteria, excessive use of cosmetics, or medical conditions that weaken the immune system.</item>
+        <item>Bulging eyes can be caused by several conditions, including Graves\' disease, which is a common cause of exophthalmos. Other risk factors include a family history of similar conditions, thyroid disease, or exposure to radiation. The use of certain medications or smoking habits can also increase the risk.</item>
     </string-array>
 
     <string-array name="data_service">
-        <item>Untuk mengobati katarak, dokter mata biasanya akan merekomendasikan operasi untuk mengganti lensa mata yang keruh dengan yang baru. Namun, untuk mengurangi risiko atau menghambat perkembangannya, kamu bisa menggunakan kacamata hitam untuk melindungi mata dari sinar UV, menjaga pola makan yang sehat, dan rutin memeriksakan mata ke dokter. Selain itu, menghindari kebiasaan yang dapat memperburuk kesehatan mata juga sangat penting.</item>
-        <item>Glaukoma tidak bisa sembuh total, tapi bisa dikendalikan dengan obat-obatan, tetes mata, atau bahkan operasi. Untuk mencegahnya, penting untuk menjaga tekanan mata dalam batas normal dengan perawatan yang tepat dan melakukan pemeriksaan mata rutin.</item>
-        <item>Untuk mengobati konjungtivitis, tergantung pada penyebabnya. Dokter mungkin akan meresepkan tetes mata antibiotik untuk infeksi bakteri, atau obat antihistamin untuk alergi. Untuk mencegah penyebaran, penting untuk tidak mengucek mata, menjaga kebersihan tangan, dan menghindari berbagi handuk atau barang-barang pribadi dengan orang lain jika kamu terinfeksi.</item>
-        <item>Pengobatan uveitis bergantung pada penyebabnya, tetapi sering melibatkan penggunaan obat antiinflamasi seperti tetes mata steroid atau obat oral. Penting untuk mendapatkan perawatan segera untuk mencegah kerusakan permanen pada mata. Pencegahan uveitis biasanya melibatkan mengelola kondisi kesehatan yang mendasarinya, seperti mengendalikan penyakit autoimun atau menghindari infeksi jika mungkin.</item>
-        <item>Pengobatan hordeolum sering melibatkan penerapan kompres hangat secara teratur untuk membantu membuka kelenjar yang tersumbat dan mengurangi pembengkakan. Dokter juga dapat meresepkan antibiotik topikal seperti tetes mata atau salep untuk membantu mengatasi infeksi. Pencegahan hordeolum melibatkan menjaga kebersihan mata dan kelopak mata, menghindari kontak dengan bakteri yang berpotensi, serta menghindari penggunaan kosmetik yang berlebihan di sekitar mata.</item>
-        <item>Pengobatan untuk mata menonjol tergantung pada penyebabnya. Untuk kondisi seperti penyakit Graves, pengobatan mungkin melibatkan terapi hormon, obat antiinflamasi, atau bahkan pembedahan untuk mengurangi tekanan pada mata. Pencegahan mata menonjol seringkali berkaitan dengan pengelolaan kondisi medis yang mendasarinya, seperti mengontrol penyakit tiroid atau menghindari faktor risiko tertentu seperti merokok atau paparan radiasi yang berlebihan.</item>
+        <item>To treat cataracts, an eye doctor usually recommends surgery to replace the cloudy lens with a new one. However, to reduce the risk or slow its progression, you can use sunglasses to protect your eyes from UV rays, maintain a healthy diet, and regularly check your eyes with a doctor. Additionally, avoiding habits that can worsen eye health is crucial.</item>
+        <item>Glaucoma cannot be completely cured, but it can be controlled with medications, eye drops, or even surgery. To prevent it, it\'s important to maintain eye pressure within normal limits with proper care and regular eye checks.</item>
+        <item>To treat conjunctivitis, it depends on the cause. The doctor may prescribe antibiotic eye drops for bacterial infections, or antihistamine medications for allergies. To prevent spread, it\'s important not to rub your eyes, maintain hand hygiene, and avoid sharing towels or personal items with others if you are infected.</item>
+        <item>Treatment for uveitis depends on its cause, but often involves using anti-inflammatory drugs such as steroid eye drops or oral medications. It\'s important to get prompt treatment to prevent permanent eye damage. Prevention of uveitis usually involves managing underlying health conditions, such as controlling autoimmune diseases or avoiding infections if possible.</item>
+        <item>Treatment for hordeolum often involves applying warm compresses regularly to help open clogged glands and reduce swelling. Doctors may also prescribe topical antibiotics such as eye drops or ointments to help treat the infection. Prevention of hordeolum involves maintaining eye and eyelid hygiene, avoiding contact with potentially bacteria, and avoiding excessive use of cosmetics around the eyes.</item>
+        <item>Treatment for bulging eyes depends on its cause. For conditions like Graves\' disease, treatment may involve hormone therapy, anti-inflammatory drugs, or even surgery to reduce eye pressure. Prevention of bulging eyes often relates to managing underlying medical conditions, such as controlling thyroid disease or avoiding specific risk factors such as smoking or excessive radiation exposure.</item>
     </string-array>
-
 
 </resources>
