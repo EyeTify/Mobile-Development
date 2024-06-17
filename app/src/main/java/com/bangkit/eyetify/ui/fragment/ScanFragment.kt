@@ -171,7 +171,7 @@ class ScanFragment : Fragment() {
             lifecycleScope.launch {
                 try {
                     val apiService = ScanConfig.getApiService()
-                    val response = apiService.uploadImage(multipartBody)
+                    val response = apiService.uploadImage(  multipartBody)
 
                     response.data?.let { data ->
                         binding.textTitleUpload.text = run {
