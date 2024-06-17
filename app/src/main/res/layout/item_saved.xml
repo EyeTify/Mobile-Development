@@ -53,20 +53,17 @@
             app:layout_constraintTop_toBottomOf="@id/tv_history_result"
             android:text="@string/sample_desc" />
 
-        <TextView
-            android:id="@+id/tv_item_published_date"
-            android:fontFamily="@font/light"
+        <ImageButton
+            android:id="@+id/btnDelete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:gravity="start"
-            android:textSize="8sp"
-            app:layout_constraintTop_toBottomOf="@+id/tv_history_suggestion"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Delete"
+            android:src="@android:drawable/ic_menu_delete"
             app:layout_constraintEnd_toEndOf="parent"
-            tools:text="@string/published_date"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="8dp"
-            />
+            app:layout_constraintTop_toBottomOf="@id/tv_history_suggestion"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

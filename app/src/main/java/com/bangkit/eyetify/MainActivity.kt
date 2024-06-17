@@ -5,6 +5,7 @@ import android.os.Build
 import android.os.Bundle
 import android.view.WindowInsets
 import android.view.WindowManager
+import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
@@ -26,9 +27,7 @@ import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
-    private val binding: ActivityMainBinding by lazy {
-        ActivityMainBinding.inflate(layoutInflater)
-    }
+    private lateinit var binding: ActivityMainBinding
 
     private val viewModel by viewModels<MainViewModel> {
         AuthViewModelFactory.getInstance(this)
@@ -38,10 +37,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         installSplashScreen()
-        Thread.sleep(3000)
+        CoroutineScope(Dispatchers.Main).launch {
+            delay(1500) // Delay for 1500 milliseconds
+        }
 
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        enableEdgeToEdge()
         setContentView(binding.root)
-
         viewModel.getSession().observe(this) { user ->
             if (!user.isLogin) {
                 startActivity(Intent(this, WelcomeActivity::class.java))
@@ -51,13 +53,13 @@ class MainActivity : AppCompatActivity() {
         setupView()
         switchFragment(HomeFragment())
 
-        val openFragmentArticle = intent.getBooleanExtra("OPEN_ARTIKEL_FRAGMENT", false)
-
-        if (openFragmentArticle) {
+        val fromFragmentArticle = intent.getBooleanExtra("OPEN_ARTIKEL_FRAGMENT", false)
+        val fromResult = intent.getBooleanExtra("navigateToHistory", false)
+        if (fromFragmentArticle) {
             openFragmentArticle()
         }
 
-        if (intent.getBooleanExtra("navigateToHistory", false)) {
+        if (fromResult) {
             navigateToHistoryFragment()
         }
 
@@ -78,12 +80,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun navigateToHistoryFragment() {
-        supportFragmentManager.commit {
-            replace(R.id.container_fragment, HistoryFragment())
-            addToBackStack(null)
-        }
-    }
+
 
     private fun switchFragment(fragment: Fragment){
         val fragmentManager = supportFragmentManager
@@ -111,6 +108,11 @@ class MainActivity : AppCompatActivity() {
     private fun openFragmentArticle() {
         switchFragment(ArticleFragment())
         setSelectedItem(R.id.action_article)
+    }
+
+    private fun navigateToHistoryFragment() {
+        switchFragment(HistoryFragment())
+        setSelectedItem(R.id.action_history)
     }
 
     private fun setSelectedItem(itemId: Int) {

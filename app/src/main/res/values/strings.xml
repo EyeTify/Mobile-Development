@@ -115,8 +115,12 @@
     <string name="search_article_hint">Search articles…</string>
     <string name="safe">Safe</string>
     <string name="warning">Warning</string>
-    <string name="danger">Danger</string>
+    <string name="danger">OverTime</string>
     <string name="welcome_msg">Welcome to \nEYETIFY</string>
+    <string name="image_validation">Make Sure Your Image Is Clear</string>
+    <string name="maximum_duration">Maximum Duration</string>
+    <string name="duration_remaining">Duration Remaining</string>
+    <string name="articles">Article</string>
 
     <string-array name="data_name">
         <item>Cataract</item>

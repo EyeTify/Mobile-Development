@@ -5,15 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.bangkit.eyetify.R
 import com.bangkit.eyetify.data.adapter.ResultSavedAdapter
+import com.bangkit.eyetify.data.repository.ResultRepository
 import com.bangkit.eyetify.data.room.AppDatabase
 import com.bangkit.eyetify.databinding.FragmentHistoryBinding
-import com.bangkit.eyetify.ui.viewmodel.factory.ArticleViewModelFactory
 import com.bangkit.eyetify.ui.viewmodel.factory.ResultViewModelFactory
-import com.bangkit.eyetify.ui.viewmodel.model.ArticleViewModel
 import com.bangkit.eyetify.ui.viewmodel.model.HistoryViewModel
 import com.justin.popupbarchart.GraphValue
 
@@ -22,28 +20,28 @@ class HistoryFragment : Fragment() {
     private var _binding: FragmentHistoryBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel by viewModels<HistoryViewModel> {
-        ResultViewModelFactory.getInstance(requireContext())
-    }
-
+    private lateinit var viewModel: HistoryViewModel
+    private lateinit var adapter: ResultSavedAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentHistoryBinding.inflate(inflater, container, false)
         return binding.root
-
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val dao = AppDatabase.getInstance(requireContext()).resultDao()
+        val repository = ResultRepository.getInstance(dao)
+        val viewModelFactory = ResultViewModelFactory(repository)
+        viewModel = ViewModelProvider(this, viewModelFactory)[HistoryViewModel::class.java]
 
         val customBarchart = binding.customBarchart
         customBarchart.setGraphValues(
@@ -58,18 +56,23 @@ class HistoryFragment : Fragment() {
             )
         )
 
-        viewModel.getAllSavedResult().observe(viewLifecycleOwner){
-            if (it != null) {
-                binding.rvHistory.layoutManager = LinearLayoutManager(requireContext())
-                val adapter = ResultSavedAdapter(it)
+        viewModel.getAllSavedResult().observe(viewLifecycleOwner) { resultList ->
+            if (resultList.isEmpty()) {
+                binding.tvEmptyList.visibility = View.VISIBLE
+                binding.rvHistory.visibility = View.GONE
+            } else {
+                binding.tvEmptyList.visibility = View.GONE
+                binding.rvHistory.visibility = View.VISIBLE
+                adapter = ResultSavedAdapter(resultList.toMutableList(), viewModel)
                 binding.rvHistory.adapter = adapter
             }
         }
+
+        binding.rvHistory.layoutManager = LinearLayoutManager(context)
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
-
 }

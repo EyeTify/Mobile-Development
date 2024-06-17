@@ -155,6 +155,8 @@ class ScanFragment : Fragment() {
         currentImageUri?.let {
             Log.d("Image URI", "showImage: $it")
             binding.imagePlaceholder.setImageURI(it)
+            binding.textTitleUpload.visibility = View.GONE
+            binding.textDescriptionUpload.text = getString(R.string.image_validation)
         }
     }
 
@@ -169,6 +171,7 @@ class ScanFragment : Fragment() {
                 requestImageFile
             )
             lifecycleScope.launch {
+                showLoading(true)
                 try {
                     val apiService = ScanConfig.getApiService()
                     val response = apiService.uploadImage(  multipartBody)
@@ -209,13 +212,8 @@ class ScanFragment : Fragment() {
         Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
     }
 
-    companion object {
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ScanFragment().apply {
-                arguments = Bundle().apply {
-
-                }
-            }
+    private fun showLoading(isLoading: Boolean) {
+        binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
     }
+
 }

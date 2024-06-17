@@ -14,5 +14,6 @@ interface ResultDao {
     @Query("SELECT * FROM results")
     fun getAllResults(): LiveData<List<ResultEntity>>
 
-
+    @Query("DELETE FROM results WHERE id = :id")
+    suspend fun deleteResultById(id: Int)
 }

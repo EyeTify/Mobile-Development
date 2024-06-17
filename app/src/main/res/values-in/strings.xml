@@ -115,8 +115,11 @@
     <string name="search_article_hint">Cari Artikel…</string>
     <string name="safe">Aman</string>
     <string name="warning">Waspada</string>
-    <string name="danger">Bahaya</string>
+    <string name="danger">Berlebihan</string>
     <string name="welcome_msg">Selamat Datang di \nEYETIFY</string>
+    <string name="image_validation">Pastikan Gambar Kamu terlihat Jelas</string>
+    <string name="articles">Artikel</string>
+
 
     <string-array name="data_name">
         <item>Cataract</item>

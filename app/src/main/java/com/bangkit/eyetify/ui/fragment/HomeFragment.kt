@@ -1,7 +1,6 @@
 package com.bangkit.eyetify.ui.fragment
 
 import android.annotation.SuppressLint
-import android.app.AlertDialog
 import android.app.AppOpsManager
 import android.app.usage.UsageStatsManager
 import android.content.Context
@@ -29,7 +28,7 @@ class HomeFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -39,7 +38,7 @@ class HomeFragment : Fragment() {
         if (checkUsageStatePermission()) {
             showUsageStats()
         } else {
-            showUsageAccessDialog()
+            startActivity(Intent(Settings.ACTION_USAGE_ACCESS_SETTINGS))
         }
     }
 
@@ -66,54 +65,54 @@ class HomeFragment : Fragment() {
             totalTimeForeground += usageStats.totalTimeInForeground
         }
 
-        val formattedTime = formatTime(totalTimeForeground)
-        val intervalInfo = "Interval: ${formatDate(startTime)} - ${formatDate(endTime)}\n"
-        binding.infoResultActivePhone.text =  formattedTime
+        // Kurangi 3 jam dari totalTimeForeground
+        val totalTimeForegroundAdjusted = totalTimeForeground - 3 * 60 * 60 * 1000
 
-        val maxDurationPhone = 12 * 60 * 60 * 1000 // 8 jam dalam milidetik
+        val formattedTime = formatTime(totalTimeForegroundAdjusted)
+        binding.infoResultActivePhone.text = formattedTime
 
-        val percentage = (totalTimeForeground.toFloat() / maxDurationPhone.toFloat()) * 100
+        val maxDurationPhone = 12 * 60 * 60 * 1000 // 12 jam dalam milidetik
+
+        val percentage = (totalTimeForegroundAdjusted.toFloat() / maxDurationPhone.toFloat()) * 100
 
         binding.progressBar.apply {
             progressMax = 100f
             setProgressWithAnimation(percentage, 3000)
             progressBarWidth = 10f
             backgroundProgressBarWidth = 10f
-            if (percentage <= 60){
-                progressBarColor = Color.GREEN
-            }else if (percentage <= 100){
-                progressBarColor = Color.rgb(255, 165, 0)
-            }else{
-                progressBarColor = Color.RED
+            progressBarColor = when {
+                percentage <= 60 -> Color.GREEN
+                percentage <= 100 -> Color.rgb(255, 165, 0)
+                else -> Color.RED
             }
             roundBorder = true
         }
 
         binding.infoResultStatusActivePhone.apply {
-            if (percentage <= 60){
-                text = context.getString(R.string.safe)
-                setTextColor(ContextCompat.getColor(context, R.color.succes))
-            }else if (percentage <= 100){
-                text = context.getString(R.string.warning)
-                setTextColor(ContextCompat.getColor(context, R.color.warning))
-            }else{
-                text = context.getString(R.string.danger)
-                setTextColor(ContextCompat.getColor(context, R.color.danger))
+            when {
+                percentage <= 60 -> {
+                    text = context.getString(R.string.safe)
+                    setTextColor(ContextCompat.getColor(context, R.color.succes))
+                }
+                percentage <= 100 -> {
+                    text = context.getString(R.string.warning)
+                    setTextColor(ContextCompat.getColor(context, R.color.warning))
+                }
+                else -> {
+                    text = context.getString(R.string.danger)
+                    setTextColor(ContextCompat.getColor(context, R.color.danger))
+                }
             }
         }
-    }
 
-    private fun showUsageAccessDialog() {
-        AlertDialog.Builder(requireContext())
-            .setTitle("Izin Akses Penggunaan Diperlukan")
-            .setMessage("Aplikasi ini membutuhkan izin akses penggunaan untuk fitur durasi penggunaan ponsel Anda. Silakan berikan izin di layar berikutnya.")
-            .setPositiveButton("Berikan Izin") { dialog, which ->
-                startActivity(Intent(Settings.ACTION_USAGE_ACCESS_SETTINGS))
-            }
-            .setNegativeButton("Batal") { dialog, which ->
-                dialog.dismiss()
-            }
-            .show()
+        // Set left card description
+        val maxDurationString = formatTime(12 * 60 * 60 * 1000 + 30 * 60 * 1000) // 8 jam 30 menit dalam milidetik
+        binding.smallCardLeftDescription.text = maxDurationString
+
+        // Hitung waktu tersisa
+        val remainingTime = maxDurationPhone - totalTimeForegroundAdjusted
+        val remainingTimeFormatted = formatTime(remainingTime)
+        binding.smallCardRightDescription.text = remainingTimeFormatted
     }
 
     @SuppressLint("DefaultLocale")

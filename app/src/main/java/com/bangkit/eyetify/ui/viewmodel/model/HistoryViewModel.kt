@@ -14,4 +14,10 @@ class HistoryViewModel(private val resultRepository: ResultRepository) : ViewMod
             resultRepository.insertResultSaved(savedData)
         }
     }
+
+    fun deleteResultById(id: Int) {
+        viewModelScope.launch {
+            resultRepository.deleteResultById(id)
+        }
+    }
 }
