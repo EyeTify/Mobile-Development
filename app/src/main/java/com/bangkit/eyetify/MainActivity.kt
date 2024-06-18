@@ -53,14 +53,19 @@ class MainActivity : AppCompatActivity() {
         setupView()
         switchFragment(HomeFragment())
 
-        val fromFragmentArticle = intent.getBooleanExtra("OPEN_ARTIKEL_FRAGMENT", false)
+        val fromFragmentArticle = intent.getBooleanExtra("navigateToArticle", false)
         val fromResult = intent.getBooleanExtra("navigateToHistory", false)
+        val fromScan = intent.getBooleanExtra("navigateToScan", false)
         if (fromFragmentArticle) {
-            openFragmentArticle()
+            navigateToArticleFragment()
         }
 
         if (fromResult) {
             navigateToHistoryFragment()
+        }
+
+        if (fromScan){
+            navigateToScanFragment()
         }
 
         binding.navigateMenu.setOnItemSelectedListener {
@@ -79,8 +84,6 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
-
-
 
     private fun switchFragment(fragment: Fragment){
         val fragmentManager = supportFragmentManager
@@ -105,7 +108,7 @@ class MainActivity : AppCompatActivity() {
             .commit()
     }
 
-    private fun openFragmentArticle() {
+    private fun navigateToArticleFragment() {
         switchFragment(ArticleFragment())
         setSelectedItem(R.id.action_article)
     }
@@ -113,6 +116,11 @@ class MainActivity : AppCompatActivity() {
     private fun navigateToHistoryFragment() {
         switchFragment(HistoryFragment())
         setSelectedItem(R.id.action_history)
+    }
+
+    private fun navigateToScanFragment() {
+        switchFragment(ScanFragment())
+        setSelectedItem(R.id.action_scan)
     }
 
     private fun setSelectedItem(itemId: Int) {

@@ -117,4 +117,11 @@ class ResultActivity : AppCompatActivity() {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        val intent = Intent(this, MainActivity::class.java)
+        intent.putExtra("navigateToScan", "ScanFragment")
+        startActivity(intent)
+        finish()
+    }
 }
