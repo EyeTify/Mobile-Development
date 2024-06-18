@@ -46,7 +46,6 @@ class HomeFragment : Fragment() {
         val usageStatsManager = requireContext().getSystemService(Context.USAGE_STATS_SERVICE) as UsageStatsManager
         val cal = Calendar.getInstance()
 
-        // Set the calendar to today's date at 00:00:00
         cal.set(Calendar.HOUR_OF_DAY, 0)
         cal.set(Calendar.MINUTE, 0)
         cal.set(Calendar.SECOND, 0)
@@ -71,7 +70,7 @@ class HomeFragment : Fragment() {
         val formattedTime = formatTime(totalTimeForegroundAdjusted)
         binding.infoResultActivePhone.text = formattedTime
 
-        val maxDurationPhone = 12 * 60 * 60 * 1000 // 12 jam dalam milidetik
+        val maxDurationPhone = 8 * 60 * 60 * 1000 // 12 jam dalam milidetik
 
         val percentage = (totalTimeForegroundAdjusted.toFloat() / maxDurationPhone.toFloat()) * 100
 
@@ -106,7 +105,7 @@ class HomeFragment : Fragment() {
         }
 
         // Set left card description
-        val maxDurationString = formatTime(12 * 60 * 60 * 1000 + 30 * 60 * 1000) // 8 jam 30 menit dalam milidetik
+        val maxDurationString = formatTime(8 * 60 * 60 * 1000) // 8 jam 30 menit dalam milidetik
         binding.smallCardLeftDescription.text = maxDurationString
 
         // Hitung waktu tersisa
@@ -121,7 +120,7 @@ class HomeFragment : Fragment() {
         val minutes = seconds / 60
         val hours = minutes / 60
         val remainingMinutes = minutes % 60
-        return String.format("%02d Jam, %02d Menit", hours, remainingMinutes)
+        return String.format("%02d ${getString(R.string.hours)}, %02d ${getString(R.string.minutes)}", hours, remainingMinutes)
     }
 
     private fun formatDate(timeInMillis: Long): String {

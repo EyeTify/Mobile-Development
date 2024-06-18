@@ -116,11 +116,15 @@
     <string name="safe">Safe</string>
     <string name="warning">Warning</string>
     <string name="danger">OverTime</string>
-    <string name="welcome_msg">Welcome to \nEYETIFY</string>
+    <string name="welcome_msg">Welcome to \nEyeTify</string>
     <string name="image_validation">Make Sure Your Image Is Clear</string>
     <string name="maximum_duration">Maximum Duration</string>
     <string name="duration_remaining">Duration Remaining</string>
     <string name="articles">Article</string>
+    <string name="hours">Hours</string>
+    <string name="minutes">Minutes</string>
+    <string name="message_reset_password">Enter your registered email address to receive a password reset link</string>
+    <string name="forgot_password">Forgot Password?</string>
 
     <string-array name="data_name">
         <item>Cataract</item>

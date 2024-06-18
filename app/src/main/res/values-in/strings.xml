@@ -116,9 +116,15 @@
     <string name="safe">Aman</string>
     <string name="warning">Waspada</string>
     <string name="danger">Berlebihan</string>
-    <string name="welcome_msg">Selamat Datang di \nEYETIFY</string>
+    <string name="welcome_msg">Selamat Datang di \nEyeTify</string>
     <string name="image_validation">Pastikan Gambar Kamu terlihat Jelas</string>
+    <string name="maximum_duration">Durasi Maksimal</string>
+    <string name="duration_remaining">Durasi Tersisa</string>
     <string name="articles">Artikel</string>
+    <string name="hours">Jam</string>
+    <string name="minutes">Menit</string>
+    <string name="message_reset_password">Masukkan alamat email terdaftar Anda untuk menerima tautan reset kata sandi</string>
+    <string name="forgot_password">Lupa Kata Sandi?</string>
 
 
     <string-array name="data_name">
