@@ -19,6 +19,7 @@ class DetailEnsiklopediaActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailEnsiklopediaBinding.inflate(layoutInflater)
+        enableEdgeToEdge()
         setContentView(binding.root)
 
         val dataEnsiklopedia = if (Build.VERSION.SDK_INT >= 33) {
