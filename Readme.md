@@ -14,8 +14,8 @@ Eyetify is an application that uses cloud-based machine learning to quickly and 
 
 ## 📲 Screenshot
 <p align="center">
-  <img src="https://github.com/EyeTify/.github/raw/main/profile/register.jpg?raw=true" alt="onboarding" width="auto" height="500">
-  <img src="https://github.com/EyeTify/.github/raw/main/profile/home.jpg?raw=true" alt="onboarding" width="auto" height="500">
-  <img src="https://github.com/EyeTify/.github/raw/main/profile/scan_3.jpg?raw=true" alt="onboarding" width="auto" height="500">
-  <img src="https://github.com/EyeTify/.github/raw/main/profile/article.jpg?raw=true" alt="onboarding" width="auto" height="500">
+  <img src="https://github.com/EyeTify/.github/raw/main/profile/register.jpg?raw=true" alt="onboarding" width="auto" height="400">
+  <img src="https://github.com/EyeTify/.github/raw/main/profile/home.jpg?raw=true" alt="onboarding" width="auto" height="400">
+  <img src="https://github.com/EyeTify/.github/raw/main/profile/scan_3.jpg?raw=true" alt="onboarding" width="auto" height="400">
+  <img src="https://github.com/EyeTify/.github/raw/main/profile/article.jpg?raw=true" alt="onboarding" width="auto" height="400">
 </p>
