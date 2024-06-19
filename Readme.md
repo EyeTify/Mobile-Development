@@ -9,8 +9,12 @@ This Application focused on the early detection of eye diseases. Leveraging adva
 | 🤖 Machine Learning   | [ML Repository](https://github.com/EyeTify/Machine-Learning) |
 | ☁️ Cloud Computing    | [CC Repository](https://github.com/EyeTify/Cloud-Computing) |
 
-## 📱 Mobile Developent
-Eyetify is an application that uses cloud-based machine learning to quickly and accurately diagnose various eye diseases. By analyzing eye images taken with a smartphone camera, this app can detect conditions such as glaucoma, cataractsy, etc. Eyetify also allows users to track their gadget usage habits and helps them manage daily screen time. Additionally, the app uses APIs to ensure users receive the latest health news updates every day.
+## 🔎 Features
+
+- **Authentication**: Secure Authentication with API Connection (Register, Login, Reset Password)
+- **Article & Ensiklopedia**: Show Information About Eye Disease & Updates News About Health
+- **Image Classification**: Analyzing images from the camera and processing them using machine learning, the application provides information on the potential risk of eye diseases if diagnosed.
+- **Time Usage Tracker**: Allows users to measure their gadget usage duration over a full day, helping them to reduce their screen time.
 
 ## 🛠 Tools/IDE/Library and resources
 | Category        | Name            | Description                                                                                           |
@@ -25,7 +29,7 @@ Eyetify is an application that uses cloud-based machine learning to quickly and 
 |                 | Room                      | To get the data access object or DAO, associated with that database                         |
 |                 | Datastore                 | To store data using key-value pairs                                                         |
 |                 | UCrop                     | To crop the image, so that the focus of the image will be more easily captured by ML        |
-| Platform        | ADV & Android Devices     | Android SDK includes everything to build, test, and deploy Android apps                     |
+| Platform        | ADV & Android Devices     | As a place to see the results of programming that has been created.                         |
 
 
 
